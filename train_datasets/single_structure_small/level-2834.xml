@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30"/>
+<Birds>
+<Bird type="BirdRed"/>
+<Bird type="BirdRed"/>
+<Bird type="BirdYellow"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectFat" material="wood" x="-1.65" y="-3.075" rotation="90" />
+<Block type="RectFat" material="wood" x="0.0" y="-3.075" rotation="90" />
+<Block type="RectFat" material="wood" x="1.65" y="-3.075" rotation="90" />
+<Block type="SquareSmall" material="wood" x="-1.65" y="-2.435" rotation="0" />
+<Block type="SquareSmall" material="wood" x="0.0" y="-2.435" rotation="0" />
+<Block type="SquareSmall" material="wood" x="1.65" y="-2.435" rotation="0" />
+<Block type="RectMedium" material="wood" x="-0.92" y="-2.11" rotation="0" />
+<Block type="RectMedium" material="wood" x="0.92" y="-2.11" rotation="0" />
+<Block type="RectMedium" material="wood" x="-0.92" y="-1.89" rotation="0" />
+<Block type="RectMedium" material="wood" x="0.92" y="-1.89" rotation="0" />
+<Block type="RectTiny" material="wood" x="-0.92" y="-1.565" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.92" y="-1.565" rotation="90" />
+<Block type="RectBig" material="wood" x="0.0" y="-1.24" rotation="0" />
+<Block type="SquareHole" material="wood" x="-0.595" y="-0.71" rotation="0" />
+<Block type="SquareHole" material="wood" x="0.595" y="-0.71" rotation="0" />
+<Block type="SquareSmall" material="wood" x="-0.595" y="-0.075" rotation="0" />
+<Block type="SquareSmall" material="wood" x="0.595" y="-0.075" rotation="0" />
+<Pig type="BasicSmall" material="" x="-0.97" y="-3.25" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.595" y="0.39" rotation="0" />
+<Pig type="BasicSmall" material="" x="-0.595" y="0.39" rotation="0" />
+<TNT type="" material="" x="-1.48" y="-1.53" rotation="0" />
+<TNT type="" material="" x="-0.47" y="-3.25" rotation="0" />
+</GameObjects>
+</Level>

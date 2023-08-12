@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30"/>
+<Birds>
+<Bird type="BirdYellow"/>
+<Bird type="BirdBlue"/>
+<Bird type="BirdBlue"/>
+<Bird type="BirdBlue"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectMedium" material="wood" x="-1.69" y="-2.66" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.96" y="-2.66" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.23" y="-2.66" rotation="90" />
+<Block type="RectMedium" material="wood" x="0.23" y="-2.66" rotation="90" />
+<Block type="RectMedium" material="wood" x="0.96" y="-2.66" rotation="90" />
+<Block type="RectMedium" material="wood" x="1.69" y="-2.66" rotation="90" />
+<Block type="RectSmall" material="wood" x="-1.69" y="-1.395" rotation="90" />
+<Block type="RectSmall" material="wood" x="-0.96" y="-1.395" rotation="90" />
+<Block type="RectSmall" material="wood" x="-0.23" y="-1.395" rotation="90" />
+<Block type="RectSmall" material="wood" x="0.23" y="-1.395" rotation="90" />
+<Block type="RectSmall" material="wood" x="0.96" y="-1.395" rotation="90" />
+<Block type="RectSmall" material="wood" x="1.69" y="-1.395" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.96" y="-0.86" rotation="0" />
+<Block type="RectMedium" material="wood" x="0.96" y="-0.86" rotation="0" />
+<Block type="RectMedium" material="wood" x="-0.96" y="-0.64" rotation="0" />
+<Block type="RectMedium" material="wood" x="0.96" y="-0.64" rotation="0" />
+<Block type="RectSmall" material="wood" x="-0.645" y="-0.42" rotation="0" />
+<Block type="RectSmall" material="wood" x="0.645" y="-0.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="1.33" y="-3.25" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.9283333333" y="-0.06" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.33" y="-3.25" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.52" y="-0.28" rotation="0" />
+<Pig type="BasicSmall" material="" x="-0.3616666667" y="-0.06" rotation="0" />
+<TNT type="" material="" x="0.6" y="-3.25" rotation="0" />
+<TNT type="" material="" x="1.52" y="-0.28" rotation="0" />
+<TNT type="" material="" x="-0.9283333333" y="-0.06" rotation="0" />
+</GameObjects>
+</Level>

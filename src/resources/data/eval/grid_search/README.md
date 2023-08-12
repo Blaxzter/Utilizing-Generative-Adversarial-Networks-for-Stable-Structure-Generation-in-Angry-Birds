@@ -1,0 +1,2 @@
+If you came here because you recieve a missing file exception or something.
+You have to download the pickle files from here: https://drive.google.com/drive/folders/1ob5ER3G-tJsDz0ypG5nax6Yq6ao4jkSA?usp=drive_link

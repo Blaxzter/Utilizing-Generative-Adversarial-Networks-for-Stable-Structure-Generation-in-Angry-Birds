@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30"/>
+<Birds>
+<Bird type="BirdRed"/>
+<Bird type="BirdBlue"/>
+<Bird type="BirdRed"/>
+<Bird type="BirdBlack"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectSmall" material="wood" x="-1.63" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="-1.315" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="-1.0" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="-0.76" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="-0.445" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="-0.13" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="0.13" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="0.445" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="0.76" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="1.0" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="1.315" y="-3.075" rotation="90" />
+<Block type="RectSmall" material="wood" x="1.63" y="-3.075" rotation="90" />
+<Block type="RectTiny" material="wood" x="-1.63" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="-1.315" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="-1.0" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="-0.76" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="-0.445" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="-0.13" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.13" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.445" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.76" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="1.0" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="1.315" y="-2.435" rotation="90" />
+<Block type="RectTiny" material="wood" x="1.63" y="-2.435" rotation="90" />
+<Block type="RectSmall" material="wood" x="-1.315" y="-2.11" rotation="0" />
+<Block type="RectSmall" material="wood" x="-0.445" y="-2.11" rotation="0" />
+<Block type="RectSmall" material="wood" x="0.445" y="-2.11" rotation="0" />
+<Block type="RectSmall" material="wood" x="1.315" y="-2.11" rotation="0" />
+<Block type="RectFat" material="wood" x="-1.315" y="-1.785" rotation="0" />
+<Block type="RectFat" material="wood" x="-0.445" y="-1.785" rotation="0" />
+<Block type="RectFat" material="wood" x="0.445" y="-1.785" rotation="0" />
+<Block type="RectFat" material="wood" x="1.315" y="-1.785" rotation="0" />
+<Block type="SquareHole" material="wood" x="-1.315" y="-1.15" rotation="0" />
+<Block type="SquareHole" material="wood" x="-0.445" y="-1.15" rotation="0" />
+<Block type="SquareHole" material="wood" x="0.445" y="-1.15" rotation="0" />
+<Block type="SquareHole" material="wood" x="1.315" y="-1.15" rotation="0" />
+<Block type="RectTiny" material="wood" x="-1.21" y="-0.62" rotation="0" />
+<Block type="RectTiny" material="wood" x="-0.55" y="-0.62" rotation="0" />
+<Block type="RectTiny" material="wood" x="0.55" y="-0.62" rotation="0" />
+<Block type="RectTiny" material="wood" x="1.21" y="-0.62" rotation="0" />
+<Block type="RectMedium" material="wood" x="-1.21" y="0.33" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.55" y="0.33" rotation="90" />
+<Block type="RectMedium" material="wood" x="0.55" y="0.33" rotation="90" />
+<Block type="RectMedium" material="wood" x="1.21" y="0.33" rotation="90" />
+<Pig type="BasicSmall" material="" x="1.21" y="1.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="-0.55" y="1.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.21" y="1.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.55" y="1.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="1.9905543962243075" y="-3.5" rotation="0" />
+</GameObjects>
+</Level>

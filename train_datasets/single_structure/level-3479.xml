@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="0" minWidth="20" maxWidth="30"/><Birds>
+<Bird type="BirdYellow"/>
+<Bird type="BirdRed"/>
+<Bird type="BirdYellow"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectFat" material="wood" x="-2.69" y="-3.075" rotation="90" />
+<Block type="RectFat" material="ice" x="-1.96" y="-3.075" rotation="90" />
+<Block type="RectFat" material="wood" x="-1.23" y="-3.075" rotation="90" />
+<Block type="RectFat" material="ice" x="-0.73" y="-3.075" rotation="90" />
+<Block type="RectFat" material="wood" x="0.0" y="-3.075" rotation="90" />
+<Block type="RectFat" material="stone" x="0.73" y="-3.075" rotation="90" />
+<Block type="RectFat" material="stone" x="1.23" y="-3.075" rotation="90" />
+<Block type="RectFat" material="ice" x="1.96" y="-3.075" rotation="90" />
+<Block type="RectFat" material="stone" x="2.69" y="-3.075" rotation="90" />
+<Block type="RectMedium" material="wood" x="-2.69" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="wood" x="-1.96" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="ice" x="-1.23" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.73" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="wood" x="0.0" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="ice" x="0.73" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="ice" x="1.23" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="wood" x="1.96" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="wood" x="2.69" y="-1.81" rotation="90" />
+<Block type="RectMedium" material="ice" x="-1.96" y="-0.86" rotation="0" />
+<Block type="RectMedium" material="stone" x="0.0" y="-0.86" rotation="0" />
+<Block type="RectMedium" material="stone" x="1.96" y="-0.86" rotation="0" />
+<Block type="RectTiny" material="stone" x="-1.96" y="-0.535" rotation="90" />
+<Block type="RectTiny" material="ice" x="0.0" y="-0.535" rotation="90" />
+<Block type="RectTiny" material="wood" x="1.96" y="-0.535" rotation="90" />
+<Block type="RectBig" material="ice" x="-1.04" y="-0.21" rotation="0" />
+<Block type="RectBig" material="wood" x="1.04" y="-0.21" rotation="0" />
+<Block type="SquareHole" material="stone" x="-0.73" y="0.32" rotation="0" />
+<Block type="SquareHole" material="wood" x="0.73" y="0.32" rotation="0" />
+<Block type="RectMedium" material="stone" x="0.0" y="0.85" rotation="0" />
+<Pig type="BasicSmall" material="" x="2.52" y="-0.5" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.7266666667" y="0.15" rotation="0" />
+<TNT type="" material="" x="0.56" y="1.21" rotation="0" />
+</GameObjects>
+</Level>
+

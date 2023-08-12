@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30"/>
+<Birds>
+<Bird type="BirdBlue"/>
+<Bird type="BirdBlack"/>
+<Bird type="BirdYellow"/>
+<Bird type="BirdYellow"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectTiny" material="wood" x="-1.65" y="-3.39" rotation="0" />
+<Block type="RectTiny" material="wood" x="0.0" y="-3.39" rotation="0" />
+<Block type="RectTiny" material="wood" x="1.65" y="-3.39" rotation="0" />
+<Block type="RectTiny" material="wood" x="-1.65" y="-3.17" rotation="0" />
+<Block type="RectTiny" material="wood" x="0.0" y="-3.17" rotation="0" />
+<Block type="RectTiny" material="wood" x="1.65" y="-3.17" rotation="0" />
+<Block type="RectMedium" material="wood" x="-0.92" y="-2.95" rotation="0" />
+<Block type="RectMedium" material="wood" x="0.92" y="-2.95" rotation="0" />
+<Block type="RectBig" material="wood" x="0.0" y="-2.73" rotation="0" />
+<Block type="SquareTiny" material="wood" x="-0.86" y="-2.51" rotation="0" />
+<Block type="SquareTiny" material="wood" x="-0.43" y="-2.51" rotation="0" />
+<Block type="SquareTiny" material="wood" x="0.0" y="-2.51" rotation="0" />
+<Block type="SquareTiny" material="wood" x="0.43" y="-2.51" rotation="0" />
+<Block type="SquareTiny" material="wood" x="0.86" y="-2.51" rotation="0" />
+<Block type="RectTiny" material="wood" x="-0.86" y="-2.185" rotation="90" />
+<Block type="RectTiny" material="wood" x="-0.43" y="-2.185" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.0" y="-2.185" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.43" y="-2.185" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.86" y="-2.185" rotation="90" />
+<Pig type="BasicSmall" material="" x="-0.43" y="-1.72" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.43" y="-1.72" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.48" y="-2.59" rotation="0" />
+<Pig type="BasicSmall" material="" x="1.48" y="-2.59" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.6288514396315903" y="-3.5" rotation="0" />
+</GameObjects>
+</Level>

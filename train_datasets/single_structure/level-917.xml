@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="0" minWidth="20" maxWidth="30"/><Birds>
+<Bird type="BirdBlack"/>
+<Bird type="BirdWhite"/>
+<Bird type="BirdRed"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectFat" material="wood" x="-0.935" y="-3.285" rotation="0" />
+<Block type="RectFat" material="ice" x="0.0" y="-3.285" rotation="0" />
+<Block type="RectFat" material="wood" x="0.935" y="-3.285" rotation="0" />
+<Block type="RectSmall" material="ice" x="-0.935" y="-2.96" rotation="0" />
+<Block type="RectSmall" material="wood" x="0.0" y="-2.96" rotation="0" />
+<Block type="RectSmall" material="stone" x="0.935" y="-2.96" rotation="0" />
+<Block type="SquareHole" material="wood" x="-0.935" y="-2.43" rotation="0" />
+<Block type="SquareHole" material="wood" x="0.0" y="-2.43" rotation="0" />
+<Block type="SquareHole" material="ice" x="0.935" y="-2.43" rotation="0" />
+<Block type="SquareSmall" material="wood" x="-0.83" y="-1.795" rotation="0" />
+<Block type="SquareSmall" material="stone" x="0.0" y="-1.795" rotation="0" />
+<Block type="SquareSmall" material="wood" x="0.83" y="-1.795" rotation="0" />
+<Block type="RectTiny" material="wood" x="-0.83" y="-1.47" rotation="0" />
+<Block type="RectTiny" material="stone" x="0.0" y="-1.47" rotation="0" />
+<Block type="RectTiny" material="ice" x="0.83" y="-1.47" rotation="0" />
+<Block type="SquareHole" material="stone" x="-0.52" y="-0.94" rotation="0" />
+<Block type="SquareHole" material="stone" x="0.52" y="-0.94" rotation="0" />
+<Block type="SquareHole" material="ice" x="-0.52" y="-0.1" rotation="0" />
+<Block type="SquareHole" material="wood" x="0.52" y="-0.1" rotation="0" />
+<Block type="RectFat" material="stone" x="-0.415" y="0.745" rotation="90" />
+<Block type="RectFat" material="wood" x="0.415" y="0.745" rotation="90" />
+<Pig type="BasicSmall" material="" x="-0.415" y="1.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.415" y="1.42" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.6931106549776676" y="-3.5" rotation="0" />
+</GameObjects>
+</Level>
+

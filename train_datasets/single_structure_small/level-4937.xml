@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30"/>
+<Birds>
+<Bird type="BirdRed"/>
+<Bird type="BirdBlack"/>
+<Bird type="BirdBlue"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectFat" material="wood" x="-0.92" y="-3.285" rotation="0" />
+<Block type="RectFat" material="wood" x="0.92" y="-3.285" rotation="0" />
+<Block type="RectTiny" material="wood" x="-1.23" y="-2.855" rotation="90" />
+<Block type="RectTiny" material="wood" x="-0.61" y="-2.855" rotation="90" />
+<Block type="RectTiny" material="wood" x="0.61" y="-2.855" rotation="90" />
+<Block type="RectTiny" material="wood" x="1.23" y="-2.855" rotation="90" />
+<Block type="SquareHole" material="wood" x="-0.92" y="-2.22" rotation="0" />
+<Block type="SquareHole" material="wood" x="0.92" y="-2.22" rotation="0" />
+<Block type="RectBig" material="wood" x="0.0" y="-1.69" rotation="0" />
+<Block type="RectFat" material="wood" x="-0.73" y="-1.155" rotation="90" />
+<Block type="RectFat" material="wood" x="0.0" y="-1.155" rotation="90" />
+<Block type="RectFat" material="wood" x="0.73" y="-1.155" rotation="90" />
+<Block type="RectFat" material="wood" x="-0.73" y="-0.305" rotation="90" />
+<Block type="RectFat" material="wood" x="0.0" y="-0.305" rotation="90" />
+<Block type="RectFat" material="wood" x="0.73" y="-0.305" rotation="90" />
+<Block type="RectTiny" material="wood" x="-0.73" y="0.23" rotation="0" />
+<Block type="RectTiny" material="wood" x="0.0" y="0.23" rotation="0" />
+<Block type="RectTiny" material="wood" x="0.73" y="0.23" rotation="0" />
+<Block type="RectMedium" material="wood" x="0.0" y="0.45" rotation="0" />
+<Block type="SquareTiny" material="wood" x="0.0" y="0.67" rotation="0" />
+<Pig type="BasicSmall" material="" x="-0.05" y="-3.25" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.0" y="1.03" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.56" y="0.81" rotation="0" />
+<Pig type="BasicSmall" material="" x="-0.56" y="0.81" rotation="0" />
+</GameObjects>
+</Level>

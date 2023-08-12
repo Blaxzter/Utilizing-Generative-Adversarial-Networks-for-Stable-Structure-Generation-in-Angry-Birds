@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level width ="2">
+<Camera x="0" y="2" minWidth="20" maxWidth="30"/>
+<Birds>
+<Bird type="BirdRed"/>
+<Bird type="BirdYellow"/>
+<Bird type="BirdYellow"/>
+</Birds>
+<Slingshot x="-8" y="-2.5"/>
+<GameObjects>
+<Block type="RectSmall" material="wood" x="-1.525" y="-3.39" rotation="0" />
+<Block type="RectSmall" material="wood" x="-0.605" y="-3.39" rotation="0" />
+<Block type="RectSmall" material="wood" x="0.605" y="-3.39" rotation="0" />
+<Block type="RectSmall" material="wood" x="1.525" y="-3.39" rotation="0" />
+<Block type="RectMedium" material="wood" x="-1.525" y="-2.44" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.895" y="-2.44" rotation="90" />
+<Block type="RectMedium" material="wood" x="-0.315" y="-2.44" rotation="90" />
+<Block type="RectMedium" material="wood" x="0.315" y="-2.44" rotation="90" />
+<Block type="RectMedium" material="wood" x="0.895" y="-2.44" rotation="90" />
+<Block type="RectMedium" material="wood" x="1.525" y="-2.44" rotation="90" />
+<Block type="RectFat" material="wood" x="-1.21" y="-1.385" rotation="0" />
+<Block type="RectFat" material="wood" x="0.0" y="-1.385" rotation="0" />
+<Block type="RectFat" material="wood" x="1.21" y="-1.385" rotation="0" />
+<Block type="RectFat" material="wood" x="-1.21" y="-0.955" rotation="0" />
+<Block type="RectFat" material="wood" x="0.0" y="-0.955" rotation="0" />
+<Block type="RectFat" material="wood" x="1.21" y="-0.955" rotation="0" />
+<Block type="RectSmall" material="wood" x="-1.21" y="-0.63" rotation="0" />
+<Block type="RectSmall" material="wood" x="0.0" y="-0.63" rotation="0" />
+<Block type="RectSmall" material="wood" x="1.21" y="-0.63" rotation="0" />
+<Pig type="BasicSmall" material="" x="-1.4933333333" y="-0.27" rotation="0" />
+<Pig type="BasicSmall" material="" x="0.9266666667" y="-0.27" rotation="0" />
+<Pig type="BasicSmall" material="" x="1.4933333333" y="-0.27" rotation="0" />
+<TNT type="" material="" x="-0.9266666667" y="-0.27" rotation="0" />
+</GameObjects>
+</Level>
