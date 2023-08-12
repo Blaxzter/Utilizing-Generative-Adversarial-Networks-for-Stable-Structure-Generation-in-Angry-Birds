@@ -1,0 +1,224 @@
+{
+    "resolution": 0.07,
+    "0": {
+        "name": "SquareHole",
+        "rotated": false,
+        "area": 121,
+        "poly_area": 121.0,
+        "width": 11,
+        "height": 11,
+        "dim": [
+            11,
+            11
+        ],
+        "orig_dim": [
+            0.84,
+            0.84
+        ],
+        "scalar": 0.8
+    },
+    "1": {
+        "name": "RectBig",
+        "rotated": false,
+        "area": 56,
+        "poly_area": 56.0,
+        "width": 28,
+        "height": 2,
+        "dim": [
+            28,
+            2
+        ],
+        "orig_dim": [
+            2.06,
+            0.22
+        ],
+        "scalar": 1.4
+    },
+    "2": {
+        "name": "RectBig",
+        "rotated": true,
+        "area": 56,
+        "poly_area": 56.0,
+        "width": 2,
+        "height": 28,
+        "dim": [
+            2,
+            28
+        ],
+        "orig_dim": [
+            0.22,
+            2.06
+        ],
+        "scalar": 1
+    },
+    "3": {
+        "name": "RectFat",
+        "rotated": false,
+        "area": 55,
+        "poly_area": 55.0,
+        "width": 11,
+        "height": 5,
+        "dim": [
+            11,
+            5
+        ],
+        "orig_dim": [
+            0.85,
+            0.43
+        ],
+        "scalar": 1
+    },
+    "4": {
+        "name": "RectFat",
+        "rotated": true,
+        "area": 55,
+        "poly_area": 55.0,
+        "width": 5,
+        "height": 11,
+        "dim": [
+            5,
+            11
+        ],
+        "orig_dim": [
+            0.43,
+            0.85
+        ],
+        "scalar": 1
+    },
+    "5": {
+        "name": "RectMedium",
+        "rotated": false,
+        "area": 46,
+        "poly_area": 46.0,
+        "width": 23,
+        "height": 2,
+        "dim": [
+            23,
+            2
+        ],
+        "orig_dim": [
+            1.68,
+            0.22
+        ],
+        "scalar": 1.2
+    },
+    "6": {
+        "name": "RectMedium",
+        "rotated": true,
+        "area": 46,
+        "poly_area": 46.0,
+        "width": 2,
+        "height": 23,
+        "dim": [
+            2,
+            23
+        ],
+        "orig_dim": [
+            0.22,
+            1.68
+        ],
+        "scalar": 1
+    },
+    "7": {
+        "name": "SquareSmall",
+        "rotated": false,
+        "area": 25,
+        "poly_area": 25.0,
+        "width": 5,
+        "height": 5,
+        "dim": [
+            5,
+            5
+        ],
+        "orig_dim": [
+            0.43,
+            0.43
+        ],
+        "scalar": 1
+    },
+    "8": {
+        "name": "RectSmall",
+        "rotated": false,
+        "area": 22,
+        "poly_area": 22.0,
+        "width": 11,
+        "height": 2,
+        "dim": [
+            11,
+            2
+        ],
+        "orig_dim": [
+            0.85,
+            0.22
+        ],
+        "scalar": 1.2
+    },
+    "9": {
+        "name": "RectSmall",
+        "rotated": true,
+        "area": 22,
+        "poly_area": 22.0,
+        "width": 2,
+        "height": 11,
+        "dim": [
+            2,
+            11
+        ],
+        "orig_dim": [
+            0.22,
+            0.85
+        ],
+        "scalar": 1
+    },
+    "10": {
+        "name": "RectTiny",
+        "rotated": false,
+        "area": 10,
+        "poly_area": 10.0,
+        "width": 5,
+        "height": 2,
+        "dim": [
+            5,
+            2
+        ],
+        "orig_dim": [
+            0.43,
+            0.22
+        ],
+        "scalar": 1.2
+    },
+    "11": {
+        "name": "RectTiny",
+        "rotated": true,
+        "area": 10,
+        "poly_area": 10.0,
+        "width": 2,
+        "height": 5,
+        "dim": [
+            2,
+            5
+        ],
+        "orig_dim": [
+            0.22,
+            0.43
+        ],
+        "scalar": 1
+    },
+    "12": {
+        "name": "SquareTiny",
+        "rotated": false,
+        "area": 4,
+        "poly_area": 4.0,
+        "width": 2,
+        "height": 2,
+        "dim": [
+            2,
+            2
+        ],
+        "orig_dim": [
+            0.22,
+            0.22
+        ],
+        "scalar": 1
+    }
+}
