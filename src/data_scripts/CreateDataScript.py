@@ -12,30 +12,6 @@ from level.LevelReader import LevelReader
 from level.LevelUtil import calc_structure_meta_data
 from util.Config import Config
 
-logger.disable('level.Level')
-
-continue_at_level = 0
-
-config = Config.get_instance()
-game_connection = GameConnection(conf = config)
-level_reader = LevelReader()
-
-orig_level_folder = config.get_data_train_path(folder = 'generated/single_structure')
-
-use_screen_shot = False
-use_ai = False
-test_on_live_game = False
-
-if test_on_live_game:
-    game_manager = GameManager(conf = config, game_connection = game_connection)
-    game_manager.start_game(is_running = False)
-
-data_file = config.get_data_set('multilayer_with_air', 'original.pickle')
-
-level_encoder = LevelImgEncoder()
-
-encoding_algorithm = level_encoder.create_multilayer_with_air
-
 
 def create_level_data_multi_structure(original_data_level, p_dict, lock):
 
@@ -180,6 +156,58 @@ def create_data_simple():
         pickle.dump(data_dict, handle, protocol = pickle.HIGHEST_PROTOCOL)
 
 
+def create_data_set(data_file, orig_level_folder, multi_layer_size = 5, _config = None):
+    global use_screen_shot, use_ai, test_on_live_game, game_manager, level_encoder, encoding_algorithm, config, level_reader, game_connection
+    logger.disable('level.Level')
+
+    if _config is None:
+        config = Config.get_instance()
+    else:
+        config = _config
+
+    continue_at_level = 0
+
+    game_connection = GameConnection(conf = config)
+    level_reader = LevelReader()
+
+    use_screen_shot = False
+    use_ai = False
+    test_on_live_game = False
+
+    if test_on_live_game:
+        game_manager = GameManager(conf = config, game_connection = game_connection)
+        game_manager.start_game(is_running = False)
+
+    logger.disable('level.Level')
+
+    level_encoder = LevelImgEncoder()
+
+    if multi_layer_size == 5:
+        encoding_algorithm = level_encoder.create_multilayer_with_air
+    elif multi_layer_size == 4:
+        encoding_algorithm = level_encoder.create_multilayer_without_air
+    elif multi_layer_size == 1:
+        encoding_algorithm = level_encoder.create_one_layer_img
+    else:
+        raise ValueError('Invalid model layer size: ' + str(multi_layer_size))
+
+    levels = sorted(Path(orig_level_folder).glob('*.xml'))
+
+    # check if levels exists
+    if len(levels) == 0:
+        raise ValueError('No levels found in folder: ' + str(orig_level_folder))
+
+    data_dict = dict()
+    for level_idx, original_data_level in tqdm(enumerate(levels), total = len(levels)):
+        if level_idx < continue_at_level:
+            continue
+
+        create_level_data_single_structure(original_data_level, data_dict, None)
+
+    with open(f'{data_file}_original.pickle', 'wb') as handle:
+        pickle.dump(data_dict, handle, protocol = pickle.HIGHEST_PROTOCOL)
+
+
 def create_data_multiprocess():
     process_manager = Manager()
     lock = process_manager.Lock()
@@ -217,4 +245,28 @@ def load_data_dict(p_dict):
 
 
 if __name__ == '__main__':
+    logger.disable('level.Level')
+
+    continue_at_level = 0
+
+    config = Config.get_instance()
+    game_connection = GameConnection(conf = config)
+    level_reader = LevelReader()
+
+    orig_level_folder = config.get_data_train_path(folder = 'generated/single_structure')
+
+    use_screen_shot = False
+    use_ai = False
+    test_on_live_game = False
+
+    if test_on_live_game:
+        game_manager = GameManager(conf = config, game_connection = game_connection)
+        game_manager.start_game(is_running = False)
+
+    data_file = config.get_data_set('multilayer_with_air', 'original.pickle')
+
+    level_encoder = LevelImgEncoder()
+
+    encoding_algorithm = level_encoder.create_multilayer_with_air
+
     create_data_simple()

@@ -185,6 +185,13 @@ class Config:
 
         return Config.instance
 
+    @staticmethod
+    def get_instance_noargs(args):
+        if Config.instance is None:
+            Config.instance = Config(args)
+
+        return Config.instance
+
     def get_generated_image_store(self):
         return self.image_store.replace("{timestamp}", self.strftime)
 
@@ -360,3 +367,4 @@ class Config:
 
 if __name__ == '__main__':
     config = Config.get_instance()
+    print(config)

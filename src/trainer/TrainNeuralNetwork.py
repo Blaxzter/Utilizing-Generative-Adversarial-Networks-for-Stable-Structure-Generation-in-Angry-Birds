@@ -2,7 +2,6 @@ import os
 import sys
 
 import tensorflow as tf
-from matplotlib import pyplot as plt
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
@@ -10,9 +9,13 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 from trainer.TrainerWrapper import NetworkTrainer
 from util.Config import Config
 from data_scripts.LevelDataset import LevelDataset
-from generator.gan.BigGans import WGANGP128128_Multilayer, WGANGP128128
+from generator.gan.BigGans import WGANGP128128_Multilayer
 
 if __name__ == '__main__':
+
+    # check if cuda is available
+
+
     with tf.device('/GPU:0'):
         config = Config.get_instance()
         config.tag = "wgan_gp_128_128_multilayer_with_air_new"

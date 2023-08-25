@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="RectFat" material="wood" x="-0.6700000000000002" y="-1.815" rotation="0.0"/>
+   <Block type="RectFat" material="stone" x="0.52" y="-1.815" rotation="0.0"/>
+   <Block type="RectFat" material="stone" x="1.6399999999999997" y="-1.815" rotation="0.0"/>
+   <Block type="RectSmall" material="stone" x="-0.9500000000000002" y="-2.9699999999999998" rotation="0.0"/>
+   <Block type="RectSmall" material="ice" x="-0.9850000000000001" y="-2.4450000000000003" rotation="90.0"/>
+   <Block type="RectSmall" material="ice" x="-0.3550000000000002" y="-2.4450000000000003" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="-0.040000000000000036" y="-2.9699999999999998" rotation="0.0"/>
+   <Block type="RectSmall" material="stone" x="0.20500000000000007" y="-2.4450000000000003" rotation="90.0"/>
+   <Block type="RectSmall" material="ice" x="0.835" y="-2.4450000000000003" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="1.08" y="-2.9699999999999998" rotation="0.0"/>
+   <Block type="RectSmall" material="stone" x="1.3249999999999997" y="-2.4450000000000003" rotation="90.0"/>
+   <Block type="RectSmall" material="stone" x="1.92" y="-2.9699999999999998" rotation="0.0"/>
+   <Block type="RectSmall" material="wood" x="1.955" y="-2.4450000000000003" rotation="90.0"/>
+   <Block type="RectMedium" material="stone" x="-1.23" y="-3.39" rotation="0.0"/>
+   <Block type="RectMedium" material="ice" x="-1.23" y="-3.1799999999999997" rotation="0.0"/>
+   <Block type="RectMedium" material="wood" x="0.52" y="-3.39" rotation="0.0"/>
+   <Block type="RectMedium" material="ice" x="0.52" y="-3.1799999999999997" rotation="0.0"/>
+   <Block type="RectMedium" material="stone" x="2.2699999999999996" y="-3.39" rotation="0.0"/>
+   <Block type="RectMedium" material="stone" x="2.2699999999999996" y="-3.1799999999999997" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="0.52" y="-1.3250000000000002" rotation="0.0"/>
+  </GameObjects>
+ </Level>

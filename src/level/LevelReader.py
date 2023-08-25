@@ -1,3 +1,4 @@
+import os
 from xml.dom.minidom import parse, Document, Element
 
 from level import Constants
@@ -41,6 +42,12 @@ class LevelReader:
         self.write_xml_file(ret_level.original_doc, level_name)
 
     def write_xml_file(self, xml_file, name):
+
+        # check if folder of file exists
+        if not os.path.exists(os.path.dirname(name)):
+            # recursively create folder
+            os.makedirs(os.path.dirname(name), exist_ok = True, mode = 0o777)
+
         writer = open(name, 'w')
         xml_file.writexml(writer, indent = " ", addindent = " ", newl = '\n')
 

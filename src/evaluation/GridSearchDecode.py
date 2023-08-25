@@ -1,16 +1,13 @@
 import json
 import os
 import pickle
-import sys
 import time
 from copy import copy
 from dataclasses import dataclass
-from multiprocessing import Process, Pool
+from multiprocessing import Pool
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
-from icecream import ic
 from loguru import logger
 from tqdm.auto import tqdm
 
@@ -19,8 +16,6 @@ from converter.to_img_converter.MultiLayerStackDecoder import MultiLayerStackDec
 from game_management.GameConnection import GameConnection
 from game_management.GameManager import GameManager
 from level.LevelVisualizer import LevelVisualizer
-from test.visualization.DashVisualization import LevelVisualization
-
 from util.Config import Config
 
 

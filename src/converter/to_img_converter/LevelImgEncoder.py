@@ -269,3 +269,10 @@ class LevelImgEncoder:
     def create_multilayer_with_air(self, element_list):
         level_img = self.create_calculated_img(element_list)
         return self.create_multi_dim_img_from_picture(level_img, with_air_layer = True)
+
+    def create_multilayer_without_air(self, element_list):
+        level_img = self.create_calculated_img(element_list)
+        return self.create_multi_dim_img_from_picture(level_img, with_air_layer = False)
+
+    def create_one_layer_img(self, element_list):
+        return self.create_calculated_img(element_list)
