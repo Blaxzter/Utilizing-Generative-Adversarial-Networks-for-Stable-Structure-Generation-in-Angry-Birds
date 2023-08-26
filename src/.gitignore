@@ -6,6 +6,7 @@ resources/data/eval/grid_search/*.pickle
 resources/science_birds/win-new/ScienceBirds_Data/StreamingAssets/Levels
 resources/models
 resources/logs
+resources/science_birds/*
 
 .idea/
 
