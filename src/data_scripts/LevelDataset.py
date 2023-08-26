@@ -7,10 +7,13 @@ from util.Config import Config
 
 class LevelDataset:
 
-    def __init__(self, dataset_name: str, batch_size = 265):
+    def __init__(self, dataset_path: str = None, dataset_name: str = None, batch_size = 265):
         self.config = Config.get_instance()
 
-        self.filename = self.config.get_tf_records(dataset_name)
+        if dataset_path is not None:
+            self.filename = dataset_path
+        else:
+            self.filename = self.config.get_tf_records(dataset_name)
 
         self.dataset = None
         self.batch_size = batch_size

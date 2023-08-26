@@ -6,6 +6,7 @@ from pathlib import Path
 
 import numpy as np
 from matplotlib import pyplot as plt
+from tqdm import tqdm
 
 from level.LevelReader import LevelReader
 from level.LevelUtil import StructureMetaData
@@ -46,7 +47,7 @@ def strip_screenshot_from_data(data: dict, out_file):
 
 def parse_data(data: dict, out_file: str):
     print(len(data.keys()))
-    for key in data.keys():
+    for key in tqdm(data.keys(), total = len(data.keys()), desc = 'Parsing data'):
         level_data = data[key]
 
         if type(level_data['img_data']) is list:
@@ -195,12 +196,14 @@ def filter_level(data, out_file, plt_show = 0, skip_value = 5):
     remove_counter = 0
 
     out_dict = dict()
-    for key in list(data.keys()):
+    for key in tqdm(list(data.keys()), total = len(data.keys()), desc = 'Filtering data'):
         level_data = data[key]
         meta_data: StructureMetaData = level_data['meta_data']
         if meta_data.block_amount <= 0:
             remove_counter += 1
             continue
+
+        continue_flag = False
 
         for idx, comp_data in enumerate(comp_data_list):
 
@@ -221,7 +224,8 @@ def filter_level(data, out_file, plt_show = 0, skip_value = 5):
                     plt.show()
                     plt_counter += 1
 
-                continue
+                continue_flag = True
+                break
 
             if level_data['img_data'].shape == comp_data['level_rep'].shape:
                 orig_only_ones = np.zeros_like(level_data['img_data'])
@@ -233,12 +237,17 @@ def filter_level(data, out_file, plt_show = 0, skip_value = 5):
                 negativ = orig_only_ones - comp_only_ones
                 if np.alltrue(negativ == 0):
                     remove_counter += 1
-                    fig, axs = plt.subplots(1, 2, dpi = 100)
-                    fig.suptitle("Same shape")
-                    axs[0].imshow(level_data['img_data'])
-                    axs[1].imshow(comp_data['level_rep'])
-                    plt.show()
-                    continue
+                    if plt_show and plt_counter < plt_show and plt_counter % skip_value == 0:
+                        fig, axs = plt.subplots(1, 2, dpi = 100)
+                        fig.suptitle("Same shape")
+                        axs[0].imshow(level_data['img_data'])
+                        axs[1].imshow(comp_data['level_rep'])
+                        plt.show()
+                    continue_flag = True
+                    break
+
+        if continue_flag:
+            continue
 
         temp_data.append(level_data['img_data'])
         comp_data_list.append(dict(meta_data = meta_data, level_rep = level_data['img_data']))
@@ -250,12 +259,13 @@ def filter_level(data, out_file, plt_show = 0, skip_value = 5):
         pickle.dump(out_dict, handle, protocol = pickle.HIGHEST_PROTOCOL)
 
 
-def unify_level(data_dict, out_file):
-    fig, axs = plt.subplots(1, 3, dpi = 100, figsize = (12, 4))
+def unify_level(data_dict, out_file, show_plt = False):
+    if show_plt:
+        fig, axs = plt.subplots(1, 3, dpi = 100, figsize = (12, 4))
 
     height_groups = dict()
     # Group level by height
-    for key in data_dict.keys():
+    for key in tqdm(data_dict.keys(), total = len(data_dict.keys()), desc = 'Unifying data'):
         level_data = data_dict[key]
 
         level_img_shape = level_data['img_data'].shape
@@ -265,11 +275,12 @@ def unify_level(data_dict, out_file):
         else:
             height_groups[height] = [(key, level_data)]
 
-    # merge close groups
-    axs[0].bar(list(height_groups.keys()), list(map(len, height_groups.values())))
-    axs[0].set_title(f'Before merging: {sum(list(map(len, height_groups.values())))}')
-    axs[0].set_ylabel('Amount of levels')
-    axs[0].set_xlabel('Height of Levels')
+    if show_plt:
+        # merge close groups
+        axs[0].bar(list(height_groups.keys()), list(map(len, height_groups.values())))
+        axs[0].set_title(f'Before merging: {sum(list(map(len, height_groups.values())))}')
+        axs[0].set_ylabel('Amount of levels')
+        axs[0].set_xlabel('Height of Levels')
 
     heights = sorted(list(height_groups.keys()))
 
@@ -284,26 +295,30 @@ def unify_level(data_dict, out_file):
             out_dict[height] = copy(temp_list)
             temp_list = []
 
-    axs[1].bar(list(out_dict.keys()), list(map(len, out_dict.values())))
-    axs[1].set_title(f'After group merging: {sum(list(map(len, out_dict.values())))}')
-    axs[1].set_ylabel('Amount of levels')
-    axs[1].set_xlabel('Height of Levels')
+    if show_plt:
+        axs[1].bar(list(out_dict.keys()), list(map(len, out_dict.values())))
+        axs[1].set_title(f'After group merging: {sum(list(map(len, out_dict.values())))}')
+        axs[1].set_ylabel('Amount of levels')
+        axs[1].set_xlabel('Height of Levels')
 
     avg_height = round(np.average(list(map(len, map(list, out_dict.values())))))
     for key, amount in out_dict.items():
         out_dict[key] = out_dict[key][:avg_height]
 
-    axs[2].bar(list(out_dict.keys()), list(map(len, out_dict.values())))
-    axs[2].set_title(f'After Unifying: {sum(list(map(len, out_dict.values())))}')
-    axs[2].set_ylabel('Amount of levels')
-    axs[2].set_xlabel('Height of Levels')
+    if show_plt:
+        axs[2].bar(list(out_dict.keys()), list(map(len, out_dict.values())))
+        axs[2].set_title(f'After Unifying: {sum(list(map(len, out_dict.values())))}')
+        axs[2].set_ylabel('Amount of levels')
+        axs[2].set_xlabel('Height of Levels')
 
-    plt.show()
+        plt.show()
 
     save_dict = dict()
     for height, level_list in out_dict.items():
         for key, level in level_list:
             save_dict[key] = level
+
+    print(f'Amount of levels after unifying heights: {len(save_dict.keys())}')
 
     with open(out_file, 'wb') as handle:
         pickle.dump(save_dict, handle, protocol = pickle.HIGHEST_PROTOCOL)
@@ -329,6 +344,23 @@ def create_filtered_dataset(data_set_name, show_plt = False):
     out_file_filtered = config.get_data_set(folder_name = data_set_name,
                                             file_name = "unified")
     unify_level(data_dict, out_file = out_file_filtered)
+
+
+def filter_dataset(data_set_file):
+
+    data_dict = load_data(data_set_file)
+    parsed_file_name = data_set_file.replace('original', 'parsed')
+    parse_data(data_dict, parsed_file_name)
+
+    data_dict = load_data(parsed_file_name)
+    out_file_filtered = data_set_file.replace('original', 'filtered')
+    filter_level(data_dict, out_file = out_file_filtered, plt_show = 0)
+
+    data_dict = load_data(out_file_filtered)
+    unified_filtered = data_set_file.replace('original', 'unified')
+    unify_level(data_dict, out_file = unified_filtered)
+
+    return unified_filtered
 
 
 if __name__ == '__main__':

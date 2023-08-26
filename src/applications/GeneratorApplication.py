@@ -312,6 +312,11 @@ class GeneratorApplication:
     def load_stored_imgs(self):
         loaded_model = self.selected_model.get().replace(' ', '_').lower()
         self.store_imgs_pickle_file = self.config.get_gan_img_store(loaded_model)
+        # check if store_imgs_pickle_file exists and create it if not
+        if not os.path.exists(self.store_imgs_pickle_file):
+            self.loaded_outputs = dict()
+            with open(self.store_imgs_pickle_file, 'wb') as handle:
+                pickle.dump(self.loaded_outputs, handle, protocol = pickle.HIGHEST_PROTOCOL)
 
         with open(self.store_imgs_pickle_file, 'rb') as f:
             self.loaded_outputs = pickle.load(f)

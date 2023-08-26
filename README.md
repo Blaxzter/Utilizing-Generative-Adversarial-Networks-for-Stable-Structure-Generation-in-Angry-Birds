@@ -46,7 +46,9 @@ If you want to load the pretrained models, download them from this [drive folder
 Similar, if you want to load the generated dataset to run the evaluation script or view them in the [Dash visualization](https://dash.plotly.com/) download them [here](https://drive.google.com/drive/folders/1ob5ER3G-tJsDz0ypG5nax6Yq6ao4jkSA?usp=drive_link) and put them into [grid_search](./src/resources/data/eval/grid_search/).
 
 #### Science birds
-In order to start the modified science bird build either go to the respective fork: [science-birds](https://github.com/Blaxzter/science-birds) and build it through unity for your system. `# TODO provide args to select correct science birds build.`  
+In order to start the modified science bird build either go to the respective fork: [science-birds](https://github.com/Blaxzter/science-birds) and build it through unity for your system.
+You can pass the folder of the build to the level drawer application.
+
 Or download the files from [this drive folder](https://drive.google.com/drive/folders/1CG9PXbvpv-ICWu9aTqlYnBe6eqvWCU6R?usp=drive_link).
 Place the download of the science bird build in to [science_birds](./src/resources/science_birds/) folder.
 

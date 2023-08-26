@@ -2,7 +2,9 @@ import argparse
 import os
 import sys
 
-from data_scripts.CreateDataScript import create_data_set
+from data_scripts.CreateDataScript import create_initial_data_set
+from data_scripts.FilterDataSet import filter_dataset
+from data_scripts.TensorflowDataCreation import TensorflowDataCreation
 from generator.gan.SimpleGans import SimpleGAN88212, SimpleGAN100112, SimpleGAN100116
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -48,38 +50,54 @@ def main(args):
         config.tag = args.run_name
         config.one_encoding = False  # currently not supported
         config.multilayer = args.multi_layer_size > 1
+        config.inner_tqdm = True
 
         # create dataset args.dataset_save_location args.run_name join
         dataset_name = os.path.join(args.dataset_save_location, args.run_name)
         # check if dataset save location exists and create it if not
-        if not os.path.exists(args.dataset_save_location):
-            os.makedirs(args.dataset_save_location)
-            print(f"Created dataset save location: {args.dataset_save_location}")
 
-        create_data_set(
-            data_file = dataset_name,
-            orig_level_folder = args.dataset,
-            multi_layer_size = args.multi_layer_size,
-            _config = config
-        )
+        tensorflow_dataset = os.path.join(dataset_name, args.run_name) + '.tfrecords'
+        if os.path.exists(tensorflow_dataset):
+            print(f"Dataset already exists: {tensorflow_dataset}")
+        else:
 
-        dataset = LevelDataset(dataset_name = "multilayer_with_air_128_128", batch_size = 32)
+            if not os.path.exists(dataset_name):
+                os.makedirs(dataset_name)
+                print(f"Created dataset save location: {dataset_name}")
+
+            created_file = create_initial_data_set(
+                data_file = os.path.join(dataset_name, args.run_name),
+                orig_level_folder = args.dataset,
+                multi_layer_size = args.multi_layer_size,
+            )
+
+            filtered_dataset = filter_dataset(created_file)
+
+            width, height = {
+                'WGANGP128128': (128, 128),
+                'WGANGP128128_Multilayer': (128, 128),
+                'SimpleGAN88212': (88, 212),
+                'SimpleGAN100112': (100, 112),
+                'SimpleGAN100116': (100, 116),
+            }[args.model]
+
+            data_creation = TensorflowDataCreation(max_width = width, max_height = height, air_layer = args.multi_layer_size == 5)
+            tensorflow_dataset = data_creation.create_tensorflow_data_from_file(
+                dataset_file_path = filtered_dataset,
+                outfile_path = os.path.join(dataset_name, args.run_name) + '.tfrecords'
+            )
+
+        dataset = LevelDataset(dataset_path = tensorflow_dataset, batch_size = 32)
         dataset.load_dataset()
 
         gan = load_model(args.model, data_augmentation = args.augmentation, last_dim = args.multi_layer_size)
         run_name = args.run_name
 
-        gan.print_summary()
-
-        trainer = NetworkTrainer(run_name = run_name, dataset = dataset, model = gan, epochs = 10000)
-        # trainer.continue_training(run_name = run_name, checkpoint_date = "20220623-015436")
-
+        trainer = NetworkTrainer(run_name = run_name, dataset = dataset, model = gan, epochs = args.epoch, checkpoint_dir = args.save_location)
         trainer.train()
 
 
 if __name__ == "__main__":
-
-    print("Hallo")
 
     parser = argparse.ArgumentParser(description = 'GAN Training Script')
 
@@ -95,7 +113,7 @@ if __name__ == "__main__":
 
     # Epoch
     parser.add_argument('-e', '--epoch', type = int, required = False, help = 'Number of epochs for training.',
-                        default = 10000)
+                        default = 200)
 
     # Batch size
     parser.add_argument('-b', '--batch_size', type = int, required = False, help = 'Batch size for training.',
@@ -107,11 +125,11 @@ if __name__ == "__main__":
                         default = 5)
 
     # Data augmentation
-    parser.add_argument('-a', '--augmentation', action = 'store_true', help = 'Use data augmentation if set.')
+    parser.add_argument('-a', '--augmentation', action = 'store_true', help = 'Use data augmentation if set.', default = True)
 
     # Run name
     parser.add_argument('-r', '--run_name', type = str, required = False, help = 'Description/name of the run.',
-                        default = 'test_run')
+                        default = 'test_run_200')
 
     # Model save location
     parser.add_argument('-s', '--save_location', type = str, required = False,
@@ -123,5 +141,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    print(parser)
     main(args)

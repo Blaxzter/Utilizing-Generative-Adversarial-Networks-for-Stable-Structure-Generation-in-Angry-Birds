@@ -156,7 +156,7 @@ def create_data_simple():
         pickle.dump(data_dict, handle, protocol = pickle.HIGHEST_PROTOCOL)
 
 
-def create_data_set(data_file, orig_level_folder, multi_layer_size = 5, _config = None):
+def create_initial_data_set(data_file, orig_level_folder, multi_layer_size = 5, _config = None):
     global use_screen_shot, use_ai, test_on_live_game, game_manager, level_encoder, encoding_algorithm, config, level_reader, game_connection
     logger.disable('level.Level')
 
@@ -198,14 +198,17 @@ def create_data_set(data_file, orig_level_folder, multi_layer_size = 5, _config 
         raise ValueError('No levels found in folder: ' + str(orig_level_folder))
 
     data_dict = dict()
-    for level_idx, original_data_level in tqdm(enumerate(levels), total = len(levels)):
+    for level_idx, original_data_level in tqdm(enumerate(levels), total = len(levels), desc = 'Creating structure images'):
         if level_idx < continue_at_level:
             continue
 
         create_level_data_single_structure(original_data_level, data_dict, None)
 
-    with open(f'{data_file}_original.pickle', 'wb') as handle:
+    dataset_file = f'{data_file}_original.pickle'
+    with open(dataset_file, 'wb') as handle:
         pickle.dump(data_dict, handle, protocol = pickle.HIGHEST_PROTOCOL)
+
+    return dataset_file
 
 
 def create_data_multiprocess():

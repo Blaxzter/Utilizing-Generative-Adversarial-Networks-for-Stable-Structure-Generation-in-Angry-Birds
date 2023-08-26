@@ -26,9 +26,13 @@ class Config:
 
         self.strftime = time.strftime("%Y%m%d-%H%M%S")
 
-        self.generator = args.generator if args.generator else GeneratorOptions.baseline
-        if self.generator not in GeneratorOptions:
-            raise ParameterException(f"The selected generator is not an option: {GeneratorOptions}")
+        # check if args has generator is valid
+        if 'generator' in args and args.generator is not None:
+            self.generator = args.generator
+            if self.generator not in GeneratorOptions:
+                raise ParameterException(f"The selected generator is not an option: {GeneratorOptions}")
+        else:
+            self.generator = GeneratorOptions.baseline
 
         self.plotting_enabled = True
         self.plot_to_file = False
@@ -51,11 +55,11 @@ class Config:
                 self.current_path = Path(f'{self.current_path}/..')
         self.current_path = str(self.current_path)[:-2]
 
-        self.level_amount: int = args.level_amount if args.level_amount else 1
+        self.level_amount: int = args.level_amount if 'level_amount' in args and args.level_amount else 1
         self.data_train_path = os.path.normpath(os.path.join(self.current_path, 'resources/data/source_files/'))
-        self.generated_level_path: str = args.generated_level_path + os.sep if args.generated_level_path else \
+        self.generated_level_path: str = args.generated_level_path + os.sep if 'generated_level_path' in args and args.generated_level_path else \
             os.path.normpath(os.path.join(self.current_path, 'resources/data/generated_level/'))
-        self.game_folder_path: str = args.game_folder_path if args.game_folder_path else \
+        self.game_folder_path: str = args.game_folder_path if 'game_folder_path' in args and args.game_folder_path else \
             os.path.normpath(os.path.join(self.current_path, 'resources/science_birds/{os}'))
         if '{os}' in self.game_folder_path:
             os_name = platform.system()
@@ -70,15 +74,15 @@ class Config:
 
         self.is_meta_data_comp = True
 
-        self.ai_path = args.ai_path if args.ai_path else os.path.normpath(
+        self.ai_path = args.ai_path if 'ai_path' in args else os.path.normpath(
             os.path.join(self.current_path, 'ai/Naive-Agent-standalone-Streamlined.jar')
         )
         self.rescue_level_path = os.path.normpath(
             os.path.join(self.current_path, 'resources/data/source_files/level_archive/{timestamp}/')
         )
 
-        self.evaluate = args.evaluate if args.evaluate else False
-        self.rescue_level = args.rescue_level if args.rescue_level else True
+        self.evaluate = args.evaluate if 'evaluate' in args else False
+        self.rescue_level = args.rescue_level if 'rescue_level' in args else True
 
         # Ml stuff
         self.create_tensorflow_writer = True
@@ -364,6 +368,18 @@ class Config:
             block_data[key]['idx'] = block_idx
 
         return block_data
+
+    def set_game_folder_props(self, folder):
+        os_name = platform.system()
+        if os_name == 'Windows':
+            self.game_folder_path = folder
+            self.game_path = os.path.join(self.game_folder_path, "ScienceBirds.exe")
+            self.copy_dest = os.path.normpath('ScienceBirds_Data/StreamingAssets/Levels/')
+        elif os_name == 'Darwin':
+            self.game_folder_path = folder
+            self.game_path = os.path.join(self.game_folder_path, "ScienceBirds.app")
+            self.copy_dest = os.path.normpath('Sciencebirds.app/Contents/Resources/Data/StreamingAssets/Levels')
+
 
 if __name__ == '__main__':
     config = Config.get_instance()

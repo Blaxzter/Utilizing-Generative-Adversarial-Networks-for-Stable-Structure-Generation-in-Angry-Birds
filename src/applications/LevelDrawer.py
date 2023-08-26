@@ -1,3 +1,4 @@
+import os
 from typing import Dict, List
 
 import matplotlib as mpl
@@ -27,7 +28,7 @@ from util.tkinterutils.ScrollableNotebook import *
 
 
 class LevelDrawer:
-    def __init__(self, level_path = None, drawing_canvas_size = None):
+    def __init__(self, level_path = None, drawing_canvas_size = None, science_birds_path = None):
         if drawing_canvas_size is not None:
             self.draw_canvas_width = drawing_canvas_size[0]
             self.draw_canvas_height = drawing_canvas_size[1]
@@ -54,6 +55,14 @@ class LevelDrawer:
 
         self.block_data = Config.get_instance().get_encoding_data(f"encoding_res_{Constants.resolution}")
         del self.block_data['resolution']
+
+        if science_birds_path is not None:
+            Config.get_instance().set_game_folder_props(science_birds_path)
+            # check if this is a valid path
+            if not os.path.exists(Config.get_instance().game_folder_path):
+                raise ValueError(f"Invalid Science birds path: {Config.get_instance().game_folder_path}")
+
+            # check if
 
         self.create_frames()
 

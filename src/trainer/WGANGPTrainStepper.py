@@ -45,7 +45,7 @@ class WGANGPTrainStepper:
     def train_batch(self):
 
         if self.inner_tqdm:
-            iter_data = tqdm(self.dataset.get_dataset(), total = self.dataset.steps, leave = True)
+            iter_data = tqdm(self.dataset.get_dataset(), total = self.dataset.steps, leave = True, desc = "Batch")
         else:
             iter_data = self.dataset.get_dataset()
 

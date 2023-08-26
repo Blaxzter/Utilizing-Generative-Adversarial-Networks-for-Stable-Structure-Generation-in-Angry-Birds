@@ -15,7 +15,7 @@ from util.TrainVisualizer import TensorBoardViz
 
 class NetworkTrainer:
 
-    def __init__(self, run_name, dataset: LevelDataset, model, epochs = 50):
+    def __init__(self, run_name, dataset: LevelDataset, model, epochs = 50, checkpoint_dir: str = None):
 
         self.config: Config = Config.get_instance()
         self.run_name = run_name
@@ -25,6 +25,8 @@ class NetworkTrainer:
         self.visualizer: TensorBoardViz = TensorBoardViz(model = model, dataset = dataset, current_run = self.run_name)
         self.train_stepper = WGANGPTrainStepper(self.model, self.dataset, self.visualizer)
         self.visualizer.create_aggregator(self.train_stepper.get_aggregated_parameters())
+
+        self.overwrite_save_location = checkpoint_dir
 
         self.checkpoint = None
         self.checkpoint_dir = None
@@ -38,7 +40,7 @@ class NetworkTrainer:
     def train(self):
         if not self.continue_run:
             self.visualizer.create_summary_writer(self.run_name)
-            self.create_checkpoint_manager(self.run_name)
+            self.create_checkpoint_manager(self.run_name, checkpoint_dir = self.overwrite_save_location)
             logger.debug(f'Start Training of {self.run_name} for {self.epochs} epochs')
         else:
             logger.debug(
@@ -46,7 +48,7 @@ class NetworkTrainer:
 
         current_epoch = 0
         if self.outer_tqdm:
-            iter_data = tqdm(range(self.epochs), total = self.epochs)
+            iter_data = tqdm(range(self.epochs), total = self.epochs, desc = f"Training: {self.run_name}")
         else:
             iter_data = range(self.epochs)
 
@@ -73,11 +75,28 @@ class NetworkTrainer:
     def save(self):
         self.manager.save()
 
-    def create_checkpoint_manager(self, run_name, run_time = None):
+    def create_checkpoint_manager(self, run_name, run_time = None, checkpoint_dir = None):
+        if checkpoint_dir is not None and checkpoint_dir[-1] != '/':
+            checkpoint_dir += '/'
+
         if run_time is None:
-            self.checkpoint_dir = self.config.get_current_checkpoint_dir(run_name)
+            if checkpoint_dir is not None:
+                self.checkpoint_dir = checkpoint_dir + '{current_run}/{timestamp}/'
+                self.checkpoint_dir = self.checkpoint_dir.replace('{current_run}', run_name)
+                self.checkpoint_dir = self.checkpoint_dir.replace('{timestamp}', self.config.strftime)
+            else:
+                self.checkpoint_dir = self.config.get_current_checkpoint_dir(run_name)
         else:
-            self.checkpoint_dir = self.config.get_checkpoint_dir(run_name, run_time)
+            if checkpoint_dir is not None:
+                self.checkpoint_dir = checkpoint_dir + '{current_run}/{timestamp}/'
+                self.checkpoint_dir = self.checkpoint_dir.replace('{current_run}', run_name)
+                self.checkpoint_dir = self.checkpoint_dir.replace('{timestamp}', run_time)
+            else:
+                self.checkpoint_dir = self.config.get_checkpoint_dir(run_name, run_time)
+
+        if not os.path.exists(self.checkpoint_dir):
+            os.makedirs(self.checkpoint_dir)
+            logger.debug(f"Created checkpoint save location: {self.checkpoint_dir}")
 
         self.checkpoint_prefix = os.path.join(self.checkpoint_dir, "ckpt")
         self.checkpoint = tf.train.Checkpoint(

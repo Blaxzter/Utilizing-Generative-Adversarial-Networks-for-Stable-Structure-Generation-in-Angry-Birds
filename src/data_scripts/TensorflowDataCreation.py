@@ -9,13 +9,12 @@ from tqdm import tqdm
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
-from converter.to_img_converter.LevelImgEncoder import LevelImgEncoder
 from util.Config import Config
 
 
 class TensorflowDataCreation:
 
-    def __init__(self, max_width = 128, max_height = 128):
+    def __init__(self, max_width = 128, max_height = 128, air_layer = True):
         self.config = Config.get_instance()
 
         # max_height = 86 + 2
@@ -139,6 +138,20 @@ class TensorflowDataCreation:
                 tf_example = self.parse_single_data_example(data_example)
                 writer.write(tf_example.SerializeToString())
 
+
+    def create_tensorflow_data_from_file(self, dataset_file_path, outfile_path):
+        with open(dataset_file_path, 'rb') as f:
+            data_dict = pickle.load(f)
+
+        if 'tfrecords' not in outfile_path:
+            outfile_path += '.tfrecords'
+
+        with tf.io.TFRecordWriter(outfile_path) as writer:
+            for date_name, data_example in tqdm(data_dict.items(), desc = 'Creating tfrecords'):
+                tf_example = self.parse_single_data_example(data_example)
+                writer.write(tf_example.SerializeToString())
+
+        return outfile_path
 
 if __name__ == '__main__':
     data_creation = TensorflowDataCreation()
