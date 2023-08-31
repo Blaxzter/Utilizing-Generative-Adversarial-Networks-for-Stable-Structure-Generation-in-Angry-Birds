@@ -100,6 +100,7 @@ class GameConnection(threading.Thread):
     def start_game(self, game_path = '../science_birds/win-new/ScienceBirds.exe'):
         os_name = platform.system()
         if os_name == 'Windows':
+            print(f"Start game: {game_path}")
             self.game_process = new([game_path, f'generatorPort', str(self.port)], shell = False, stdout = subprocess.DEVNULL, stderr = subprocess.STDOUT)
         elif os_name == 'Darwin':
             os.system(f"open {game_path}")

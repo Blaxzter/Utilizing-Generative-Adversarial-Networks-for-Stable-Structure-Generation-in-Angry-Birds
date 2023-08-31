@@ -43,10 +43,11 @@ class TestEnvironment:
             level.create_polygons()
             yield level_counter, level
 
-    def get_level(self, idx):
+    def get_level(self, idx, normalize = True):
         level_path = self.levels[idx]
         level = self.level_reader.parse_level(level_path)
-        level.normalize()
+        if normalize:
+            level.normalize()
         level.create_polygons()
         return level
 

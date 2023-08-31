@@ -92,7 +92,7 @@ class LevelReader:
                 if move_closer and level is not None:
                     current_element_doc.setAttribute(
                         "x",
-                        str(level_element.x - abs(level.slingshot.x + min_distance_to_slingshot - data[0]))
+                        str(level_element.x - abs(level.slingshot.x + min_distance_to_slingshot - struct_data[0]))
                     )
                 else:
                     current_element_doc.setAttribute("x", str(level_element.x))

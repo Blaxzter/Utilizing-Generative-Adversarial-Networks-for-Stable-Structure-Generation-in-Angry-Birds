@@ -1,23 +1,23 @@
 
 # Utilizing Generative Adversarial Networks for Stable Structure Generation in Angry Birds
 
-Welcome to the repository for the paper [Utilizing Generative Adversarial Networks for Stable Structure Generation in Angry Birds](./AAAI_Utilizing-Generative-Adversarial-Networks-for-Stable-Structure-Generation-in-Angry-Birds.pdf).
+Welcome to the repository for the paper [Utilizing Generative Adversarial Networks for Stable Structure Generation in Angry Birds](./AIIDE_Utilizing-Generative-Adversarial-Networks-for-Stable-Structure-Generation-in-Angry-Birds.pdf).
 
 Included in this repository are:   
 1. The pretrained GAN models to generate Science Birds structures.
 2. An application to test various model architectures and the decoding algorithm.
-3. The AAAI paper and the [Master Thesis](./Frederic_Abraham-Master_Thesis-Stable__Structure_Generation_with_GANs-signed.pdf) on which the paper is based.
+3. The AIIDE paper and [Master Thesis](./Frederic_Abraham-Master_Thesis-Stable__Structure_Generation_with_GANs-signed.pdf) that describe the generation process.
 4. The generated testing dataset on which the presented results are based, along with the original GAN output and data collected through simulation.
 
 ### Examples:
 
-| Low Profile | Most Blocks |
+| Low Profile | Many Blocks |
 |------------|------------------------------------------------|
-| ![Low Profile](./images/created_structures/LowProfile/1_low_profile_page_0.png) | ![Most Blocks](./images/created_structures/NoBlocksDestroyedMostBlocks/0_block_new_page_0.png) |
+| ![Low Profile](./images/created_structures/LowProfile/1_low_profile_page_0.png) | ![Many Blocks](./images/created_structures/NoBlocksDestroyedMostBlocks/0_block_new_page_0.png) |
 
-| Alot of Pigs | Tower |
+| Many Pigs | Tower |
 |------------|------------------------------------------------|
-| ![Alot of Pigs](./images/created_structures/PigAmount/23_pig_amount_new_page_0.png) | ![Most Blocks](./images/created_structures/Tower/1_towers_page_0.png) |
+| ![Many Pigs](./images/created_structures/PigAmount/23_pig_amount_new_page_0.png) | ![Tower](./images/created_structures/Tower/1_towers_page_0.png) |
 
 ### Abstract:  
 > This paper investigates the suitability of using Generative Adversarial Networks (GANs) to generate stable structures for the physics-based puzzle game Angry Birds. 
@@ -27,32 +27,22 @@ Included in this repository are:
 
 ## Installation Instructions:
 
-This project was developed in python 3.8 and is therefore recomended as the installation has been tested with it. 
-
-
 1. Install [Python 3.8](https://www.python.org/downloads/release/python-380/)
-1. Navigate into [src](./src/) and create a virtual environment.
-   1.  I usually use [pyenv](https://github.com/pyenv/pyenv) with [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
-   1. create venv `virtualenv --python C:\Path\To\Python\python.exe venv`
-   1. activate venv `.\venv\Scripts\activate`
-1. Install requirements `pip -r requirements.txt`
-1. Now you should be able to start the Testing Applicataion with `python .\StartApplication.py`
-
+1. Navigate into the [src](./src/) folder and create a virtual python environment.
+   1. We recommend [pyenv](https://github.com/pyenv/pyenv) with [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+   1. Create venv `virtualenv --python C:\Path\To\Python\python.exe venv`
+   1. Activate venv `.\venv\Scripts\activate`
+1. Install all python modules specified in the requirements.txt file `pip install -r requirements.txt`
+1. Download the Windows Science Birds Binaries from [here](https://github.com/Blaxzter/science-birds/releases/tag/v1.0.0) and place them into [science_birds](./src/resources/science_birds/).
+   1. Open the StartApplication.py file and modify the science_birds_path parameter for your respective operating system version (Windows is used by default)
+   1. You can also export builds for different operating systems from the original Unity source code at [science-birds](https://github.com/Blaxzter/science-birds).
+1. If installed correctly, you should be able to start the Testing Applicataion by running the StartApplication.py file `python StartApplication.py`
 
 #### Pretrained models 
-If you want to load the pretrained models, download them from this [drive folder](https://drive.google.com/drive/folders/1veidxtf0s1Lwqk-Qj7wzvI2z9Rd3jzRf?usp=drive_link) and put them in the model folder: [models](./models/).   
+To utilise our pretrained models, download them [here](https://drive.google.com/drive/folders/1veidxtf0s1Lwqk-Qj7wzvI2z9Rd3jzRf?usp=drive_link) and place them into [models](./models/).   
 
 #### Generated dataset
-Similar, if you want to load the generated dataset to run the evaluation script or view them in the [Dash visualization](https://dash.plotly.com/) download them [here](https://drive.google.com/drive/folders/1ob5ER3G-tJsDz0ypG5nax6Yq6ao4jkSA?usp=drive_link) and put them into [grid_search](./src/resources/data/eval/grid_search/).
-
-#### Science birds
-In order to start the modified science bird build either go to the respective fork: [science-birds](https://github.com/Blaxzter/science-birds) and build it through unity for your system.
-You can pass the folder of the build to the level drawer application.
-
-Or download the files from [this drive folder](https://drive.google.com/drive/folders/1CG9PXbvpv-ICWu9aTqlYnBe6eqvWCU6R?usp=drive_link).
-Place the download of the science bird build in to [science_birds](./src/resources/science_birds/) folder.
-
-I've only tested the windows build. 
+To load our generated level dataset to run the evaluation script or view them in the [Dash visualization](https://dash.plotly.com/), download them [here](https://drive.google.com/drive/folders/1ob5ER3G-tJsDz0ypG5nax6Yq6ao4jkSA?usp=drive_link) and put them into [grid_search](./src/resources/data/eval/grid_search/).
 
 ## Training:
 
@@ -100,7 +90,7 @@ This application has been mainly used to test the various facets of this repo.
 You can:
 1. Load models
 1. Test decoding functions
-1. draw a structure
+1. Draw a structure
 1. Load decoded model into science birds
 
 | Input Drawing | Output_drawing |

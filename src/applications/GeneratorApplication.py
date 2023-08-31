@@ -54,7 +54,6 @@ class GeneratorApplication:
             'True One Hot': self.load_true_one_hot,
             'Small True One Hot With Air': self.small_true_one_hot_with_air,
             'Multilayer With Air': self.multilayer_with_air,
-            'RELU Multilayer With Air': self.multilayer_with_air_relu,
             'New Multilayer With Air': self.multilayer_with_air_new
         }
 
@@ -510,16 +509,6 @@ class GeneratorApplication:
     def multilayer_with_air(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
         self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_multilayer_with_air')
-        self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
-        self.img_decoding = self.decoding_functions.argmax_multilayer_decoding_with_air
-        self.gan = WGANGP128128_Multilayer(last_dim = 5)
-        self.single_element = False
-        self.small_version = False
-        self.uses_air_layer = True
-
-    def multilayer_with_air_relu(self):
-        from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_relu_multilayer_with_air')
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding_with_air
         self.gan = WGANGP128128_Multilayer(last_dim = 5)

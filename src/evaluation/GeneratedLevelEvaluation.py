@@ -481,22 +481,22 @@ def save_to_file():
             data_output_list = pickle.load(f)
 
 
-    extracted_data = {
-        f'level_{i}' : data_output_list[i]['data'] for i in range(0, len(data_output_list))
-    }
-
-    # write to json file
-    with open(config.get_fids_file(f"main_set_data"), 'wb') as f:
-        created_data = json.dumps(extracted_data, indent = 4, sort_keys = True)
-        f.write(created_data.encode('utf-8'))
-
-    # level_reader = LevelReader()
+    # extracted_data = {
+    #     f'level_{i}' : data_output_list[i]['data'] for i in range(0, len(data_output_list))
+    # }
     #
-    # for i in range(0, len(data_output_list)):
-    #     elements = data_output_list[i]['level'].blocks
-    #     level = level_reader.create_level_from_structure(elements, red_birds = True)
-    #     level_path = config.good_generated_level(f'level_{i}')
-    #     level_reader.write_xml_file(level, level_path)
+    # # write to json file
+    # with open(config.get_fids_file(f"main_set_data"), 'wb') as f:
+    #     created_data = json.dumps(extracted_data, indent = 4, sort_keys = True)
+    #     f.write(created_data.encode('utf-8'))
+
+    level_reader = LevelReader()
+
+    for i in range(0, len(data_output_list)):
+        elements = data_output_list[i]['level'].get_used_elements()
+        level = level_reader.create_level_from_structure(elements, red_birds = True)
+        level_path = config.good_generated_level(f'level_{i}')
+        level_reader.write_xml_file(level, level_path)
 
 
 if __name__ == '__main__':

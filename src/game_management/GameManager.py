@@ -53,11 +53,11 @@ class GameManager:
         self.game_connection.load_level_menu()
         return self.game_connection.simulate_all_levels(start_idx, end_idx, wait_for_stable, wait_for_response)
 
-    def switch_to_level(self, level, element_idx = 4, stop_time = False, wait_for_stable = False):
-        return self.switch_to_level_elements(level.get_used_elements(), element_idx, stop_time, wait_for_stable)
+    def switch_to_level(self, level, element_idx = 4, stop_time = False, wait_for_stable = False, move_to_ground = True):
+        return self.switch_to_level_elements(level.get_used_elements(), element_idx, stop_time, wait_for_stable, move_to_ground)
 
-    def switch_to_level_elements(self, elements, element_idx = 4, stop_time = False, wait_for_stable = False):
-        level_path = self.create_level_xml_file(element_idx, elements)
+    def switch_to_level_elements(self, elements, element_idx = 4, stop_time = False, wait_for_stable = False, move_to_ground = True):
+        level_path = self.create_level_xml_file(element_idx, elements, move_to_ground)
 
         return self.change_level(path = str(level_path), stopTime = stop_time, wait_for_stable = wait_for_stable)
 
@@ -82,8 +82,8 @@ class GameManager:
 
         return level_paths
 
-    def create_level_xml_file(self, element_idx, elements):
-        level = self.level_reader.create_level_from_structure(elements, red_birds = True)
+    def create_level_xml_file(self, element_idx, elements, move_to_ground = True):
+        level = self.level_reader.create_level_from_structure(elements, red_birds = True, move_to_ground = move_to_ground)
         level_folder = self.conf.get_data_train_path(folder = 'temp')
         level_number = f'0{element_idx}' if len(str(element_idx)) == 1 else str(element_idx)
         level_path = f'{level_folder}/level-{level_number}.xml'

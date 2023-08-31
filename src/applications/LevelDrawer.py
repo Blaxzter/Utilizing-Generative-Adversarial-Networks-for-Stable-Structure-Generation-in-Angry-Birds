@@ -56,11 +56,13 @@ class LevelDrawer:
         self.block_data = Config.get_instance().get_encoding_data(f"encoding_res_{Constants.resolution}")
         del self.block_data['resolution']
 
+        self.is_valid_science_birds_path = True
+
         if science_birds_path is not None:
             Config.get_instance().set_game_folder_props(science_birds_path)
             # check if this is a valid path
             if not os.path.exists(Config.get_instance().game_folder_path):
-                raise ValueError(f"Invalid Science birds path: {Config.get_instance().game_folder_path}")
+                self.is_valid_science_birds_path = False
 
             # check if
 
@@ -215,17 +217,20 @@ class LevelDrawer:
                                   height = 2, width = 10, text = "Delete")
         self.plot_button.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
 
-        self.start_game_button = Button(self.top_frame, command = lambda: self.start_game(), height = 2, width = 15,
-                                        text = "Start Game")
-        self.start_game_button.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
+        # button that displays the plot
+        if self.is_valid_science_birds_path:
 
-        self.play_level = Button(self.top_frame, command = lambda: self.run_level_in_game(), height = 2, width = 15,
-                                 text = "Send To Game")
-        self.play_level.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
+            self.start_game_button = Button(self.top_frame, command = lambda: self.start_game(), height = 2, width = 15,
+                                            text = "Start Game")
+            self.start_game_button.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
 
-        self.screen_shot = Button(self.top_frame, command = lambda: self.screenshot_structure(), height = 2, width = 15,
-                                  text = "Screen Shot")
-        self.screen_shot.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
+            self.play_level = Button(self.top_frame, command = lambda: self.run_level_in_game(), height = 2, width = 15,
+                                     text = "Send To Game")
+            self.play_level.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
+
+            self.screen_shot = Button(self.top_frame, command = lambda: self.screenshot_structure(), height = 2, width = 15,
+                                      text = "Screen Shot")
+            self.screen_shot.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
 
         wrapper = Canvas(self.top_frame)
         wrapper.pack(side = LEFT, padx = (10, 10), pady = (20, 10))
@@ -336,6 +341,7 @@ class LevelDrawer:
         self.add_tab_to_fig_canvas(fig, ax, 'Rectangles')
 
     def load_level(self):
+        self.clear_figure_canvas()
         load_level = int(self.level_select.get('0.0', 'end'))
 
         level_path = 'generated/single_structure'
@@ -343,9 +349,9 @@ class LevelDrawer:
             level_path = self.level_path
 
         test_environment = TestEnvironment(level_path)
-        level = test_environment.get_level(load_level)
+        self.level = test_environment.get_level(load_level, normalize = False)
         level_img_encoder = LevelImgEncoder()
-        elements = level.get_used_elements()
+        elements = self.level.get_used_elements()
 
         if self.draw_mode.get() == 'LevelImg':
             encoded_img = level_img_encoder.create_calculated_img(elements)
@@ -353,6 +359,15 @@ class LevelDrawer:
             encoded_img = level_img_encoder.create_one_element_img(elements)
 
         self.draw_level(encoded_img)
+
+        fig, ax = plt.subplots(1, 1, dpi = 100)
+
+        self.level_visualizer.create_img_of_structure(
+            self.level.get_used_elements(), use_grid = False, ax = ax, scaled = True
+        )
+
+        self.add_tab_to_fig_canvas(fig, ax, 'Loaded Level')
+
 
     def draw_level(self, encoded_img, tab = -1):
         if tab == -1: tab = self.selected_tab
