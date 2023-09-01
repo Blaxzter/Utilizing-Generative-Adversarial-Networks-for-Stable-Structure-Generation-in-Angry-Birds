@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareSmall" material="ice" x="2.3200000000000003" y="-3.285" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="2.25" y="-2.795" rotation="0.0"/>
+   <Block type="RectMedium" material="wood" x="2.95" y="-2.66" rotation="90.0"/>
+   <Block type="SquareHole" material="ice" x="3.3000000000000003" y="-0.14" rotation="0.0"/>
+   <Block type="RectFat" material="stone" x="3.3000000000000003" y="0.7700000000000001" rotation="90.0"/>
+   <Block type="RectFat" material="ice" x="4.49" y="-0.14" rotation="90.0"/>
+   <Block type="RectFat" material="ice" x="4.49" y="0.7700000000000001" rotation="90.0"/>
+   <Block type="SquareTiny" material="wood" x="3.4400000000000004" y="-3.15" rotation="0.0"/>
+   <Block type="SquareTiny" material="wood" x="3.37" y="-0.7000000000000001" rotation="0.0"/>
+   <Block type="SquareTiny" material="stone" x="2.95" y="0.42000000000000004" rotation="0.0"/>
+   <Block type="SquareTiny" material="wood" x="4.49" y="-0.91" rotation="0.0"/>
+   <Block type="SquareTiny" material="ice" x="4.42" y="-0.7000000000000001" rotation="0.0"/>
+   <Block type="RectTiny" material="ice" x="3.7199999999999998" y="-3.3600000000000003" rotation="0.0"/>
+   <Block type="RectTiny" material="wood" x="3.6500000000000004" y="-0.7699999999999999" rotation="90.0"/>
+   <Block type="RectMedium" material="stone" x="4.07" y="-2.66" rotation="90.0"/>
+   <Block type="RectBig" material="stone" x="3.6500000000000004" y="-2.1700000000000004" rotation="90.0"/>
+   <Block type="RectBig" material="ice" x="4.07" y="-0.7699999999999999" rotation="90.0"/>
+   <Block type="RectBig" material="ice" x="4.7700000000000005" y="-1.2600000000000002" rotation="90.0"/>
+   <Block type="RectFat" material="stone" x="5.54" y="-3.075" rotation="90.0"/>
+   <Block type="RectTiny" material="stone" x="5.19" y="-3.285" rotation="90.0"/>
+   <Block type="RectMedium" material="ice" x="5.54" y="-1.6749999999999998" rotation="90.0"/>
+  </GameObjects>
+ </Level>

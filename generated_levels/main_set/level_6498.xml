@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareHole" material="ice" x="4.210000000000001" y="-0.7899999999999999" rotation="0.0"/>
+   <Block type="RectFat" material="ice" x="3.58" y="-1.42" rotation="0.0"/>
+   <Block type="SquareSmall" material="ice" x="3.9999999999999996" y="-1.9100000000000001" rotation="0.0"/>
+   <Block type="SquareTiny" material="ice" x="2.11" y="-2.33" rotation="0.0"/>
+   <Block type="SquareTiny" material="ice" x="2.7399999999999998" y="-3.24" rotation="0.0"/>
+   <Block type="SquareTiny" material="wood" x="3.02" y="-1.56" rotation="0.0"/>
+   <Block type="SquareTiny" material="wood" x="3.65" y="-1.0699999999999998" rotation="0.0"/>
+   <Block type="SquareTiny" material="ice" x="5.609999999999999" y="-1.63" rotation="0.0"/>
+   <Block type="RectTiny" material="wood" x="4.210000000000001" y="-1.56" rotation="0.0"/>
+   <Block type="RectTiny" material="wood" x="4.77" y="-2.19" rotation="0.0"/>
+   <Block type="RectTiny" material="ice" x="5.470000000000001" y="-2.19" rotation="0.0"/>
+   <Block type="RectSmall" material="ice" x="2.11" y="-2.89" rotation="90.0"/>
+   <Block type="RectSmall" material="ice" x="2.46" y="-2.89" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="3.86" y="-2.89" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="4.140000000000001" y="-2.89" rotation="90.0"/>
+   <Block type="RectMedium" material="ice" x="4.49" y="-2.47" rotation="90.0"/>
+   <Block type="RectMedium" material="ice" x="5.119999999999999" y="-1.35" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="3.23" y="-2.19" rotation="0.0"/>
+   <Block type="RectBig" material="ice" x="5.82" y="-2.47" rotation="90.0"/>
+   <Pig type="BasicSmall" material="None" x="4.210000000000001" y="-0.16000000000000003" rotation="0.0"/>
+  </GameObjects>
+ </Level>

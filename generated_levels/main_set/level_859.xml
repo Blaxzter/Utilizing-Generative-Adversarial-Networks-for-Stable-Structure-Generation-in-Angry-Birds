@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareHole" material="wood" x="2.6400000000000006" y="-2.62" rotation="0.0"/>
+   <Block type="SquareHole" material="wood" x="3.4799999999999995" y="-2.62" rotation="0.0"/>
+   <Block type="SquareHole" material="ice" x="3.62" y="-1.78" rotation="0.0"/>
+   <Block type="SquareHole" material="wood" x="4.46" y="-2.62" rotation="0.0"/>
+   <Block type="RectMedium" material="stone" x="3.62" y="-3.39" rotation="0.0"/>
+   <Block type="RectMedium" material="stone" x="5.79" y="-3.39" rotation="0.0"/>
+   <Block type="RectBig" material="stone" x="1.4500000000000004" y="-3.39" rotation="0.0"/>
+   <Block type="RectBig" material="ice" x="2.3600000000000003" y="-3.1799999999999997" rotation="0.0"/>
+   <Block type="RectBig" material="ice" x="4.74" y="-3.1799999999999997" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="1.8" y="-2.83" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="3.6900000000000004" y="-1.15" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="5.44" y="-2.83" rotation="0.0"/>
+  </GameObjects>
+ </Level>

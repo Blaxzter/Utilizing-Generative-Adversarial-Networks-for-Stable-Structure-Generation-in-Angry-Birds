@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="RectBig" material="stone" x="3.03" y="-3.39" rotation="0.0"/>
+   <Block type="RectTiny" material="stone" x="5.06" y="-3.39" rotation="0.0"/>
+  </GameObjects>
+ </Level>

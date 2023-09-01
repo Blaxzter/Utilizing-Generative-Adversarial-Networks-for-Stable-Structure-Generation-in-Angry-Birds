@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareTiny" material="wood" x="4.220000000000001" y="-2.3049999999999997" rotation="0.0"/>
+   <Block type="SquareTiny" material="wood" x="4.640000000000001" y="-2.5149999999999997" rotation="0.0"/>
+   <Block type="SquareTiny" material="stone" x="5.0600000000000005" y="-3.355" rotation="0.0"/>
+   <Block type="SquareTiny" material="ice" x="5.41" y="-2.445" rotation="0.0"/>
+   <Block type="RectTiny" material="wood" x="3.45" y="-2.5149999999999997" rotation="0.0"/>
+   <Block type="RectTiny" material="ice" x="3.45" y="-3.2849999999999997" rotation="90.0"/>
+   <Block type="RectTiny" material="wood" x="3.7300000000000004" y="-2.025" rotation="90.0"/>
+   <Block type="RectTiny" material="wood" x="4.010000000000001" y="-2.5149999999999997" rotation="0.0"/>
+   <Block type="RectSmall" material="stone" x="2.12" y="-3.005" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="3.7300000000000004" y="-3.005" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="3.7300000000000004" y="-1.3950000000000002" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="4.78" y="-2.3049999999999997" rotation="0.0"/>
+   <Block type="RectSmall" material="ice" x="5.41" y="-3.005" rotation="90.0"/>
+   <Block type="RectMedium" material="wood" x="3.7300000000000004" y="-0.06500000000000014" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="3.0300000000000002" y="-2.3049999999999997" rotation="0.0"/>
+   <Block type="RectBig" material="stone" x="2.8200000000000003" y="-1.115" rotation="90.0"/>
+   <Block type="RectBig" material="ice" x="3.66" y="0.14499999999999982" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="4.640000000000001" y="-1.115" rotation="90.0"/>
+   <Pig type="BasicSmall" material="None" x="4.36" y="0.4949999999999999" rotation="0.0"/>
+  </GameObjects>
+ </Level>

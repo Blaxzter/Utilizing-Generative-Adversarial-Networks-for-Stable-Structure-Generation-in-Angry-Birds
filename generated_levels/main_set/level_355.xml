@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareHole" material="stone" x="1.7299999999999998" y="-2.2350000000000003" rotation="0.0"/>
+   <Block type="SquareHole" material="stone" x="2.5699999999999994" y="-2.725" rotation="0.0"/>
+   <Block type="SquareHole" material="wood" x="3.55" y="-2.865" rotation="0.0"/>
+   <Block type="RectFat" material="wood" x="1.5899999999999996" y="-2.935" rotation="0.0"/>
+   <Block type="RectFat" material="stone" x="2.5699999999999994" y="-2.0250000000000004" rotation="0.0"/>
+   <Block type="RectFat" material="stone" x="3.4799999999999995" y="-2.0250000000000004" rotation="0.0"/>
+   <Block type="RectFat" material="wood" x="4.529999999999999" y="-2.865" rotation="90.0"/>
+   <Block type="RectFat" material="stone" x="6.0" y="-2.375" rotation="0.0"/>
+   <Block type="SquareSmall" material="stone" x="4.6" y="-2.2350000000000003" rotation="0.0"/>
+   <Block type="SquareSmall" material="stone" x="5.3" y="-2.375" rotation="0.0"/>
+   <Block type="RectSmall" material="wood" x="4.109999999999999" y="-3.075" rotation="90.0"/>
+   <Block type="RectBig" material="wood" x="2.1499999999999995" y="-3.2150000000000003" rotation="0.0"/>
+   <Block type="RectBig" material="stone" x="5.09" y="-1.9549999999999998" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="5.72" y="-3.2150000000000003" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="5.79" y="-2.795" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="5.93" y="-3.005" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="1.5899999999999996" y="-1.605" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="3.41" y="-1.605" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="5.4399999999999995" y="-1.605" rotation="0.0"/>
+  </GameObjects>
+ </Level>

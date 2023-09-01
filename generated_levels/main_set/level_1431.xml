@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareHole" material="stone" x="3.37" y="-2.2350000000000003" rotation="0.0"/>
+   <Block type="SquareHole" material="ice" x="6.380000000000001" y="-3.075" rotation="0.0"/>
+   <Block type="RectFat" material="ice" x="2.25" y="-3.075" rotation="90.0"/>
+   <Block type="RectFat" material="stone" x="2.53" y="-2.4450000000000003" rotation="0.0"/>
+   <Block type="RectFat" material="ice" x="2.95" y="-3.075" rotation="90.0"/>
+   <Block type="RectFat" material="wood" x="3.86" y="-3.075" rotation="90.0"/>
+   <Block type="RectFat" material="stone" x="4.210000000000001" y="-2.0250000000000004" rotation="0.0"/>
+   <Block type="RectFat" material="stone" x="4.49" y="-3.075" rotation="90.0"/>
+   <Block type="RectFat" material="wood" x="5.119999999999999" y="-2.4450000000000003" rotation="0.0"/>
+   <Block type="SquareTiny" material="wood" x="4.5600000000000005" y="-2.375" rotation="0.0"/>
+   <Block type="SquareTiny" material="ice" x="4.91" y="-2.095" rotation="0.0"/>
+   <Block type="SquareTiny" material="stone" x="6.1" y="-2.515" rotation="0.0"/>
+   <Block type="RectTiny" material="stone" x="5.75" y="-2.585" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="2.25" y="-2.2350000000000003" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="3.44" y="-1.605" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="4.140000000000001" y="-1.6749999999999998" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="4.84" y="-1.815" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="5.960000000000001" y="-2.2350000000000003" rotation="0.0"/>
+  </GameObjects>
+ </Level>

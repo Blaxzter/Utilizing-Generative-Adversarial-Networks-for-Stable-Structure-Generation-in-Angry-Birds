@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+ <Level width="2">
+  <Camera x="0" y="1" minWidth="20" maxWidth="30"/>
+  <Birds>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+   <Bird type="BirdRed"/>
+  </Birds>
+  <Slingshot x="-8" y="-2.5"/>
+  <GameObjects>
+   <Block type="SquareHole" material="wood" x="3.98" y="-1.4300000000000002" rotation="0.0"/>
+   <Block type="SquareHole" material="wood" x="3.98" y="-0.52" rotation="0.0"/>
+   <Block type="RectFat" material="ice" x="4.68" y="-1.64" rotation="90.0"/>
+   <Block type="RectFat" material="wood" x="5.3100000000000005" y="-3.04" rotation="90.0"/>
+   <Block type="RectTiny" material="wood" x="1.4599999999999997" y="-2.83" rotation="90.0"/>
+   <Block type="RectTiny" material="wood" x="3.28" y="-2.41" rotation="90.0"/>
+   <Block type="RectTiny" material="wood" x="3.21" y="-1.71" rotation="0.0"/>
+   <Block type="RectTiny" material="ice" x="3.4899999999999998" y="-2.13" rotation="90.0"/>
+   <Block type="RectTiny" material="wood" x="3.3499999999999996" y="-1.29" rotation="0.0"/>
+   <Block type="RectTiny" material="wood" x="4.68" y="-2.41" rotation="90.0"/>
+   <Block type="RectTiny" material="stone" x="5.9399999999999995" y="-2.13" rotation="0.0"/>
+   <Block type="RectSmall" material="wood" x="1.2499999999999998" y="-3.04" rotation="90.0"/>
+   <Block type="RectSmall" material="ice" x="2.7199999999999998" y="-3.04" rotation="90.0"/>
+   <Block type="RectSmall" material="wood" x="3.28" y="-3.04" rotation="90.0"/>
+   <Block type="RectSmall" material="stone" x="4.68" y="-3.04" rotation="90.0"/>
+   <Block type="RectSmall" material="ice" x="6.779999999999999" y="-3.04" rotation="90.0"/>
+   <Block type="RectMedium" material="wood" x="2.02" y="-2.34" rotation="0.0"/>
+   <Block type="RectBig" material="ice" x="2.3699999999999997" y="-2.13" rotation="0.0"/>
+   <Block type="RectBig" material="stone" x="4.68" y="-2.13" rotation="0.0"/>
+   <Block type="RectBig" material="wood" x="6.08" y="-2.34" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="1.5999999999999996" y="-3.25" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="3.6999999999999997" y="0.10999999999999985" rotation="0.0"/>
+   <Pig type="BasicSmall" material="None" x="4.26" y="0.10999999999999985" rotation="0.0"/>
+  </GameObjects>
+ </Level>
