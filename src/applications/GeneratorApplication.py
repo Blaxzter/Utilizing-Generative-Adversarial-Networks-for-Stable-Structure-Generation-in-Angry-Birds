@@ -43,18 +43,17 @@ class GeneratorApplication:
         self.small_version = False
 
         self.model_loads = {
-            'Standard GAN': self.load_model_0_0,
-            'Standard GAN Old': self.load_model_0,
-            'Standard GAN Next': self.load_model_1,
+            'Standard GAN 1': self.load_model_0,
+            'Standard GAN 2': self.load_model_1,
             'W-GAN SGD': self.load_model_2,
             'W-GAN ADAM': self.load_model_3,
             'Big Gan Multilayer': self.load_multilayer_encoding,
+            'Multilayer With Air (AIIDE)': self.multilayer_with_air,
+            'Multilayer With Air - RELU': self.multilayer_with_air_new,
             'One Element Encoding': self.load_one_element_encoding,
             'One Element Multilayer': self.load_one_element_multilayer,
             'True One Hot': self.load_true_one_hot,
-            'Small True One Hot With Air': self.small_true_one_hot_with_air,
-            'Multilayer With Air': self.multilayer_with_air,
-            'New Multilayer With Air': self.multilayer_with_air_new
+            'Small True One Hot With Air': self.small_true_one_hot_with_air
         }
 
         if frame is None:
@@ -331,7 +330,7 @@ class GeneratorApplication:
         self.loaded_outputs[comment] = dict(
             output = orig_img.numpy(),
             prediction = prediction,
-            seed = self.seed.numpy(),
+            seed = self.seed,
             comment = comment
         )
 
@@ -521,7 +520,7 @@ class GeneratorApplication:
         self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_multilayer_with_air_new')
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding_with_air
-        self.gan = WGANGP128128_Multilayer(last_dim = 5)
+        self.gan = WGANGP128128_Multilayer(last_dim = 5, last_layer = 'ReLU')
         self.single_element = False
         self.small_version = False
         self.uses_air_layer = True

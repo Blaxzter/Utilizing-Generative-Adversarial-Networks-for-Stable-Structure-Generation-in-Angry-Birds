@@ -485,7 +485,7 @@ class LevelDrawer:
         img = self.game_manager.get_img(structure = True)
         fig, ax = self.new_fig()
         ax.imshow(img)
-        self.add_tab_to_fig_canvas(fig, ax, name = f'Decoded level')
+        self.add_tab_to_fig_canvas(fig, ax, name = f'Screen Shot')
 
     def create_parameter_popup(self, dict_data: Dict, ok_button_text: str, callback):
 
