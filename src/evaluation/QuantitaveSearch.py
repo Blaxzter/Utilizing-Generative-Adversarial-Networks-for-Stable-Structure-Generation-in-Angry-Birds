@@ -48,7 +48,7 @@ class QuantitativeSearch:
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.rescale_function = self.decoding_functions.rescale
 
-        self.checkpoint_dir = self.config.get_checkpoint_dir('wgan_gp_128_128_multilayer_with_air', '20220816-202429')
+        self.checkpoint_dir = self.config.get_new_model_path('Multilayer With Air (AIIDE)')
         self.gan = WGANGP128128_Multilayer(last_dim = 5)
 
         self.checkpoint = tf.train.Checkpoint(

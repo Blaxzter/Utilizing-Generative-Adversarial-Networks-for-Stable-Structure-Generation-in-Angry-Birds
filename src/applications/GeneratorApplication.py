@@ -417,7 +417,7 @@ class GeneratorApplication:
 
     def load_model_0(self):
         from generator.gan.SimpleGans import SimpleGAN100112
-        self.checkpoint_dir = self.config.get_new_model_path('simple_gan_112_100')
+        self.checkpoint_dir = self.config.get_new_model_path('Standard GAN 1')
         self.gan = SimpleGAN100112()
         self.decoding_functions.update_rescale_values(max_value = 4, shift_value = 0)
         self.img_decoding = self.decoding_functions.default_rint_rescaling
@@ -427,7 +427,7 @@ class GeneratorApplication:
 
     def load_model_1(self):
         from generator.gan.SimpleGans import SimpleGAN100116
-        self.checkpoint_dir = self.config.get_new_model_path('simple_gan_116_100')
+        self.checkpoint_dir = self.config.get_new_model_path('Standard GAN 2')
         self.gan = SimpleGAN100116()
         self.decoding_functions.update_rescale_values(max_value = 4, shift_value = 0)
         self.img_decoding = self.decoding_functions.default_rint_rescaling
@@ -437,7 +437,7 @@ class GeneratorApplication:
 
     def load_model_2(self):
         from generator.gan.SimpleGans import SimpleGAN100116
-        self.checkpoint_dir = self.config.get_new_model_path('wasserstein-gan_116_100')
+        self.checkpoint_dir = self.config.get_new_model_path('W-GAN SGD')
         self.gan = SimpleGAN100116()
         self.decoding_functions.update_rescale_values(max_value = 4, shift_value = 0)
         self.img_decoding = self.decoding_functions.default_rint_rescaling
@@ -447,7 +447,7 @@ class GeneratorApplication:
 
     def load_model_3(self):
         from generator.gan.SimpleGans import SimpleGAN100116
-        self.checkpoint_dir = self.config.get_new_model_path('wasserstein-gan_116_100_adam')
+        self.checkpoint_dir = self.config.get_new_model_path('W-GAN ADAM')
         self.gan = SimpleGAN100116()
         self.decoding_functions.update_rescale_values(max_value = 4, shift_value = 0)
         self.img_decoding = self.decoding_functions.default_rint_rescaling
@@ -457,7 +457,7 @@ class GeneratorApplication:
 
     def load_multilayer_encoding(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wasserstein-gan_GP_128_128_multi_layer_fixed')
+        self.checkpoint_dir = self.config.get_new_model_path('Big Gan Multilayer')
         self.gan = WGANGP128128_Multilayer()
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding
@@ -467,7 +467,7 @@ class GeneratorApplication:
 
     def load_one_element_encoding(self):
         from generator.gan.BigGans import WGANGP128128
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_one_element_encoding_fixed')
+        self.checkpoint_dir = self.config.get_new_model_path('One Element Encoding')
         self.decoding_functions.update_rescale_values(max_value = 40, shift_value = 1)
         self.img_decoding = self.decoding_functions.threshold_rint_rescaling
         self.gan = WGANGP128128()
@@ -477,7 +477,7 @@ class GeneratorApplication:
 
     def load_one_element_multilayer(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_one_element_multilayer_fixed')
+        self.checkpoint_dir = self.config.get_new_model_path('One Element Multilayer')
         self.decoding_functions.update_rescale_values(max_value = 14, shift_value = 1)
         self.img_decoding = self.decoding_functions.one_element_multilayer
         self.gan = WGANGP128128_Multilayer()
@@ -487,7 +487,7 @@ class GeneratorApplication:
 
     def load_true_one_hot(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_true_one_hot')
+        self.checkpoint_dir = self.config.get_new_model_path('True One Hot')
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding
         self.gan = WGANGP128128_Multilayer(last_dim = 40)
@@ -497,7 +497,7 @@ class GeneratorApplication:
 
     def small_true_one_hot_with_air(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_small_one_element_true_one_hot_with_air')
+        self.checkpoint_dir = self.config.get_new_model_path('Small True One Hot With Air')
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding_with_air
         self.gan = WGANGP128128_Multilayer(last_dim = 15)
@@ -507,7 +507,7 @@ class GeneratorApplication:
 
     def multilayer_with_air(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_multilayer_with_air')
+        self.checkpoint_dir = self.config.get_new_model_path('Multilayer With Air (AIIDE)')
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding_with_air
         self.gan = WGANGP128128_Multilayer(last_dim = 5)
@@ -517,7 +517,7 @@ class GeneratorApplication:
 
     def multilayer_with_air_new(self):
         from generator.gan.BigGans import WGANGP128128_Multilayer
-        self.checkpoint_dir = self.config.get_new_model_path('wgan_gp_128_128_multilayer_with_air_new')
+        self.checkpoint_dir = self.config.get_new_model_path('Multilayer With Air - RELU')
         self.decoding_functions.update_rescale_values(max_value = 1, shift_value = 1)
         self.img_decoding = self.decoding_functions.argmax_multilayer_decoding_with_air
         self.gan = WGANGP128128_Multilayer(last_dim = 5, last_layer = 'ReLU')

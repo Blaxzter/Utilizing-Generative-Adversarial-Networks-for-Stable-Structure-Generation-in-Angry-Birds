@@ -21,7 +21,7 @@ def create_data():
     rescale_function = decoding_functions.rescale
 
     # load first gan
-    checkpoint_dir = config.get_checkpoint_dir('wgan_gp_128_128_multilayer_with_air', '20220816-202429')
+    checkpoint_dir = config.get_new_model_path('Multilayer With Air (AIIDE)')
     air_gan = WGANGP128128_Multilayer(last_dim = 5)
 
     checkpoint = tf.train.Checkpoint(
@@ -37,8 +37,7 @@ def create_data():
     checkpoint.restore(manager.latest_checkpoint)
 
     # Load second gan
-    checkpoint_dir = config.get_checkpoint_dir('wasserstein-gan_GP_128_128_multi_layer_fixed',
-                                               '20220728-172004')
+    checkpoint_dir = config.get_new_model_path('Big Gan Multilayer')
     no_air_gan = WGANGP128128_Multilayer()
 
     checkpoint = tf.train.Checkpoint(

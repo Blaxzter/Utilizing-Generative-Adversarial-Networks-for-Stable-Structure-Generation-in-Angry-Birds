@@ -46,7 +46,7 @@ def create_data_set(n_amount = 200):
     rescale_function = decoding_functions.rescale
     grid_search_dataset = config.get_grid_search_file("generated_data_set")
 
-    checkpoint_dir = config.get_checkpoint_dir('wgan_gp_128_128_multilayer_with_air', '20220816-202429')
+    checkpoint_dir = config.get_new_model_path('Multilayer With Air (AIIDE)')
     gan = WGANGP128128_Multilayer(last_dim = 5)
 
     checkpoint = tf.train.Checkpoint(
