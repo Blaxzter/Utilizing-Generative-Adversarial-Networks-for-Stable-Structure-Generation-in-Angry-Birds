@@ -120,17 +120,14 @@ Short description of the functionalities.
 
 #### Control Elements
 
-- **Decode Drawing**: That is an alternative way of decoding the drawn image.
-   - When select box "Decoding Mode" on the top right is on LevelImg it uses the Recursive Rectangle Decoding (RRD) from section 3.2.1 from the thesis. The main concept is that it tries to detect rectangles in the drawn image and puzzles the existing blocks into the structure outline until it fits. 
-      - Not really production ready/slow when outline becomes too big or is impossible. 
-      - Always fills structure if possible (And the detected rectangles aren't wrong)
-   - When the Decoding Mode is on "One Element" The decode drawing mode assumes that the drawing is in One-Element Encoding of section 3.1.3 in the thesis. Each block is only represented by one pixel in the center, as seen in the following image:
-   	<img src="images/application/OneElementEncoding.png" alt="One Element encoding" width="200"/>   
-   - Recalibrate check box is for moving the blocks out of one another in the One Element encoding. 
-   - The GAN Models using this encoding were sadly too noisy to produce good results.
+- **Decode Drawing**: That is an alternative way of decoding the drawn image. 
+	- When select box "Decoding Mode" on the top right is on LevelImg it uses the Recursive Rectangle Decoding (RRD) from section 3.2.1 from the thesis. The main concept is that it tries to detect rectangles in the drawn image and puzzles the existing blocks into the structure outline until it fits. Not really production ready/slow when outline becomes too big or is impossible. Always fills structure if possible (And the detected rectangles aren't wrong)
+	- When the Decoding Mode is on "One Element" The decode drawing mode assumes that the drawing is in One-Element Encoding of section 3.1.3 in the thesis. Each block is only represented by one pixel in the center, as seen in the image below. Recalibrate check box is for moving the blocks out of one another in the One Element encoding. The GAN Models using this encoding were sadly too noisy to produce good results.
 
-- **Visualize Rectangles**: Used for debugging the RRD decoding approach. 
-   - It works together with the Material Rectangle number. 1 = green, 2 = blue...  
+	<img src="images/application/OneElementEncoding.png" alt="One Element encoding" width="200"/>
+
+- **Visualize Rectangles**: Used for debugging the RRD decoding approach. It works together with the Material Rectangle number. 1 = green, 2 = blue...  
+
    Rectangles: 
 	<img src="images/application/VisualizedRectangles.png" alt="Visualized Rectangles" width="200"/> 
    Decoded: 
@@ -147,7 +144,8 @@ Short description of the functionalities.
 
 The blue rectangle region is only visible when the folder provided by the science_birds_path exists.  
 You can start the game and send a decoded or loaded level to the game and see how it performs. 
-The screenshot buttons will reload the level and creates a photo of the structure and adds it as a tab to the right side.   
+The screenshot buttons will reload the level and creates a photo of the structure and adds it as a tab to the right side.
+
 <img src="images/application/ScreenShot.png" alt="Added screenshot" width="400"/>  
 
 
@@ -189,7 +187,8 @@ The **Loaded Output:** selection can load stored outputs, and a loaded output ca
 
 #### GAN Output decoding
 
-The button on the bottom right opens the options' panel for the presented decoding algorithm. 
+The button on the bottom right opens the options' panel for the presented decoding algorithm.
+
 ![Decode GAN image Options](images/application/DecodeGanImgOptions.png)
 
 Each parameter that influences the GAN output is also described in more detail in section 3.2.2.3 Parameter.
