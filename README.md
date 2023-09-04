@@ -1,7 +1,7 @@
 
 # Utilizing Generative Adversarial Networks for Stable Structure Generation in Angry Birds
 
-Welcome to the repository for the paper [Utilizing Generative Adversarial Networks for Stable Structure Generation in Angry Birds](./AIIDE_Utilizing-Generative-Adversarial-Networks-for-Stable-Structure-Generation-in-Angry-Birds.pdf).
+Welcome to the repository for the paper [Utilizing Generative Adversarial Networks for Stable Structure Generation in Angry Birds](./AIIDE_Utilizing_GANs_for_Stable_Structure_Generation_in_Angry_Brids.pdf).
 
 Included in this repository are:   
 1. The pretrained GAN models to generate Science Birds structures.
