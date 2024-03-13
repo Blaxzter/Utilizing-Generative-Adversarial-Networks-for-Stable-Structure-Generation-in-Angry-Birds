@@ -203,4 +203,19 @@ Each parameter that influences the GAN output is also described in more detail i
 | bird cutoff | Same for birds |
 | recalibrate blocks | If blocks should be moved outside one another |
 | combine layers | If each layer gets decoded individually or squashed into one layer |
-| disable plotting | Toggle if the decoding process should be visualized in the right pane. Each selection step and gets shown. |
+| disable plotting | Toggle if the decoding process should be visualized in the right pane. Each selection step and gets shown. | 
+
+
+## Cite with
+
+```
+@inproceedings{abraham2023utilizing,
+  title={Utilizing generative adversarial networks for stable structure generation in angry birds},
+  author={Abraham, Frederic and Stephenson, Matthew},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment},
+  volume={19},
+  number={1},
+  pages={2--12},
+  year={2023}
+}
+```
