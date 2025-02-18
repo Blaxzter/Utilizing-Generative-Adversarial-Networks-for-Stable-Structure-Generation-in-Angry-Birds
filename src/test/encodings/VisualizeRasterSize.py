@@ -43,7 +43,7 @@ def visualize_raster_sizes():
 
 def create_level_img():
 
-    test_environment = TestEnvironment('generated/single_structure')
+    test_environment = TestEnvironment()
     level = test_environment.get_level(0)
 
     level_visualizer = LevelVisualizer()
@@ -60,5 +60,5 @@ def create_level_img():
     plt.show()
 
 if __name__ == '__main__':
-    visualize_raster_sizes()
-    # create_level_img()
+    # visualize_raster_sizes()
+    create_level_img()

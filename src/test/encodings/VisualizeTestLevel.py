@@ -59,4 +59,5 @@ def visualize_test_level_with_screenshot(direction = 'vertical', stacked = 3, x_
 
 if __name__ == '__main__':
     # decode_test_level(stacked = 2, direction = 'horizontal')
-    visualize_level()
+    # visualize_level()
+    visualize_test_level_with_screenshot(stacked = 3, direction = 'vertical')

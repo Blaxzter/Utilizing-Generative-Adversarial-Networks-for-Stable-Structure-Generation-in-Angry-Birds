@@ -147,9 +147,9 @@ class GameManager:
         for level in Path(self.conf.get_game_level_path()).glob('*.*'):
             os.remove(level)
 
-    def select_level(self, i):
+    def select_level(self, i, wait_for_stable = True, stopTime = False):
         self.game_connection.load_level_menu()
-        self.game_connection.change_level(index = i)
+        self.game_connection.change_level(index = i, wait_for_stable = wait_for_stable, stopTime = stopTime)
 
     def go_to_menu(self):
         self.game_connection.go_to_menu()

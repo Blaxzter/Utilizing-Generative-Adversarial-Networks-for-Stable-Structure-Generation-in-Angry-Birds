@@ -10,6 +10,6 @@ if __name__ == '__main__':
     level_drawer = LevelDrawer(
         level_path = generated_levels,
         drawing_canvas_size = (60, 60),
-        science_birds_path = './resources/science_birds/win-slow/',
+        science_birds_path ='resources/science_birds/win-new/',
     )
     mainloop()

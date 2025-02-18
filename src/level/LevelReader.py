@@ -62,10 +62,6 @@ class LevelReader:
             level = Level()
             level.blocks = structure
 
-        data = None
-        if move_to_ground:
-            data = calc_structure_dimensions(structure, use_original = True)
-
         level.separate_structures()
 
         def _sort_elements(_element):

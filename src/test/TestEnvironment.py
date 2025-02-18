@@ -12,7 +12,7 @@ from util.Config import Config
 
 class TestEnvironment:
 
-    def __init__(self, level_folder = 'generated/single_structure'):
+    def __init__(self, level_folder = '../../../generated_levels/main_set/'):
         self.config = Config.get_instance()
 
         self.game_connection = GameConnection(conf = self.config)
@@ -29,6 +29,10 @@ class TestEnvironment:
             self.level_path = level_folder
 
         self.levels = list(map(str, Path(self.level_path).glob('*.xml')))
+        
+        print(f'Found {len(self.levels)} levels in {self.level_path}')
+        if len(self.levels) == 0:
+            raise Exception('No levels found in the given path')
 
     def __len__(self):
         return
